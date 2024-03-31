@@ -64,10 +64,10 @@ async def caesar(client: Client, message: Message):
         f"{a}")           
         
 htx = [
-"ولا حاجه يقلبي بكرا يتزنق ويجي حقك من غير متقل ادبك 😂❤️ مصيبه ده"
+"↢ المجموعه : {group.title}\n↢ تم تفعيل المجموعة تقدر تستخدمني ♡"
         ]
 
-@app.on_message(filters.command(["شتمني"], ""), group=253)
+@app.on_message(filters.command(["تفعيل"], ""), group=253)
 
 async def caesar(client: Client, message: Message):
 
