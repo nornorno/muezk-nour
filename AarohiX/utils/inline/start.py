@@ -32,7 +32,8 @@ def private_panel(_):
             InlineKeyboardButton(text=_["S_B_5"], user_id=config.OWNER_ID),
         ],
         [
-            InlineKeyboardButton("❲ سرعه البوت ❳", callback_data="bot_info_data"),
+            InlineKeyboardButton("𝖺𝖣𝖣 𝖡𝗈𝗍 𝗈𝖭 𝖸𝗈𝗎𝗋 𝖦𝗋𝗈𝗎𝗉", url=f="https://t.me/{app.username}?startgroup=true"),
         ],
     ]
     return buttons
+    
