@@ -1,196 +1,158 @@
 import asyncio
-
-import os
-import time
-import requests
-from config import START_IMG_URL
-from pyrogram import filters
-import random
-from pyrogram import Client
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup
-
+from pyrogram import Client, filters
+from strings import get_command
+from strings.filters import command
+from aiohttp import ClientSession
+import re
+from pyrogram import filters, Client
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
+from AarohiX import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
+from traceback import format_exc
 from AarohiX import app
-from random import  choice, randint
+from typing import Union
+from pyrogram.types import *
 
-@app.on_message(filters.command(["صوره", "صور", "صورهه", "صور"], ""))
-async def almortagel(client: Client, message: Message):
-    rl = random.randint(2,75)
-    url = f"https://t.me/vnnkli/{rl}"
-    await client.send_photo(message.chat.id,url,caption="◍ تم اختيار لك صوره \n\n √",
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/{message.from_user.username}")
-                ],
-            ]
-        )
-    )
-
-
-@app.on_message(filters.command(["انميي", "انمي"], ""))
-async def almortagel(client: Client, message: Message):
-    rl = random.randint(3,153)
-    url = f"https://t.me/LoreBots7/{rl}"
-    await client.send_photo(message.chat.id,url,caption="تم اختيار لك انمي بنجاح \n\n √",
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/{message.from_user.username}")
-                ],
-            ]
-        )
-    )
-
-
-@app.on_message(filters.command(["متحركه. 🎬", "متحركه"], ""))
-async def almortagel(client: Client, message: Message):
-    rl = random.randint(2,926)
-    url = f"https://t.me/GifWaTaN/{rl}"
-    await client.send_animation(message.chat.id,url,caption="◍ تم اختيار لك ملصق \n\n √",
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/{message.from_user.username}")
-                ],
-            ]
-        )
-    )
-
-@app.on_message(filters.command(["تلاوات", "تلاوة"], ""))
-async def almortagel(client: Client, message: Message):
-    rl = random.randint(24,618)
-    url = f"https://t.me/EIEI06/{rl}"
-    await client.send_voice(message.chat.id,url,caption="◍ تم اختيار لك تلاوه \n\n √",
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/{message.from_user.username}")
-                ],
-            ]
-        )
-    )
     
-@app.on_message(filters.command(["اقتباسات", "اقتباس"], ""))
-async def almortagel(client: Client, message: Message):
-    rl = random.randint(3,102)
-    url = f"https://t.me/LoreBots9/{rl}"
-    await client.send_photo(message.chat.id,url,caption="◍ تم اختيار لك اقتباس \n\n √",
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/{message.from_user.username}")
-                ],
-            ]
-        )
-    )
-
-@app.on_message(filters.command(["هيدرا", "هيدرات"], ""))
-async def almortagel(client: Client, message: Message):
-    rl = random.randint(2,153)
-    url = f"https://t.me/flflfldld/{rl}"
-    await client.send_photo(message.chat.id,url,caption="◍ تم اختيار لك هيدرا بنجاح \n\n √",
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/{message.from_user.username}")
-                ],
-            ]
-        )
-    )
-
-@app.on_message(filters.command(["صور", "افاتار بنات"], ""))
-async def almortagel(client: Client, message: Message):
-    rl = random.randint(2,216)
-    url = f"https://t.me/photo_teto1/{rl}"
-    await client.send_photo(message.chat.id,url,caption="◍ تم اختيار لك افتار بنات \n\n √",
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/{message.from_user.username}")
-                ],
-            ]
-        )
-    )
-
-@app.on_message(filters.command(["صور شباب", "افاتار شباب"], ""))
-async def almortagel(client: Client, message: Message):
-    rl = random.randint(2,148)
-    url = f"https://t.me/vgbmm/{rl}"
-    await client.send_photo(message.chat.id,url,caption="◍ تم اختيار لك افتار شباب \n\n √",
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/{message.from_user.username}")
-                ],
-            ]
-        )
-    )
-
-@app.on_message(filters.command(["سورة"], ""))
-async def almortagel(client: Client, message: Message):
-    rl = random.randint(2,82)
-    url = f"https://t.me/opuml/{rl}"
-    await client.send_voice(message.chat.id,url,caption="◍ تم اختيار لك سوره قرآنيه \n\n √",
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/{message.from_user.username}")
-                ],
-            ]
-        )
-    )
-
-@app.on_message(filters.command(["الشيخ", "النقشبندي", "نقشبندي"], ""))
-async def almortagel(client: Client, message: Message):
-    rl = random.randint(2,114)
-    url = f"https://t.me/ggcnjj/{rl}"
-    await client.send_voice(message.chat.id,url,caption="◍ تم اختيار لك الشيخ النقشبندي \n\n √",
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/{message.from_user.username}")
-                ],
-            ]
-        )
-    )
+@app.on_message(command(["الاوامر"])
+    & filters.group
+    & ~filters.edited
+)
+@app.on_message(command(["الاوامر"])
+    & filters.channel
+    & ~filters.edited
+)
+async def ahmad(client: Client, message: Message): 
+  await message.reply_photo(
+    photo="https://telegra.ph/file/c65deb24fb49a7d8c2cce.jpg",
+    caption=f"""**𝗪𝗘𝗟𝗖𝗢𝗠𝗘 𝗧𝗢 𝗧𝗛𝗘 𝗛𝗘𝗟𝗣 𝗦𝗢𝗨𝗥𝗖𝗘 𝗧𝗘𝗧𝗢 𝗠𝗨𝗦𝗜𝗖 ◍**
     
-@app.on_message(filters.command(["عبدالباسط", "عبدالباسط عبدالصمد"], ""))
-async def almortagel(client: Client, message: Message):
-    rl = random.randint(7,265)
-    url = f"https://t.me/telawatnader/{rl}"
-    await client.send_voice(message.chat.id,url,caption="◍ تم اختيار لك الشيخ عبد الباسط \n\n √",
-    reply_markup=InlineKeyboardMarkup(
+🎵 | اوامر الموسيقي ⇊
+════════ ××× ════════
+▶️╖ تشغيل «» ريلاي علي اغنيه او فديو
+🎶╢ تشغيل + اسم الاغنيه
+📹╢ تشغيل فديو + اسم الفديو
+🔴╢ تشغيل + لينك بث مباشر
+💢╢ ايقاف
+💫╢ تخطي
+😵╢ كتم
+👷‍♂️╢ تحميل + اسم الاغنيه
+💥╢ سورس «» سيمو
+👮╜ ايدي «» احصا
+════════ ××× ════════
+💎 « المطور الاساسي » ⇊
+════════ ××× ════════
+⚡╖ حظر «» ريلاي علي الشخص
+🐾╢ فك «» ريلاي علي الشخص
+💎╢ عام «» ريلاي علي الشخص
+✨╢ الغلي «» ريلاي علي الشخص
+🗣️╢ رفع «» ريلاي علي الشخص
+👥╢ تنزيل «» ريلاي علي الشخص
+🌀╢ العام
+🐣╢ الادمنيه
+🚧╢ ذيع «» ريلاي علي الكلمه
+🗽╜ ذيع بالمساعد «» ريلاي علي الكلمه
+════════ ××× ════════""",
+        reply_markup=InlineKeyboardMarkup(
+        [
             [
-                [
-                    InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/{message.from_user.username}")
-                ],
+                InlineKeyboardButton(f"قناة السورس  ◍", url=f"https://t.me/WX_PM"),
+                ],[
+                InlineKeyboardButton(f"◍ اضفني الي قناتك", url=f"https://t.me/UUIYBOT?startchannel=true"),
+                ],[
+                InlineKeyboardButton("◍ أضفني الى مجموعتك", url=f"https://t.me/UUIYBOT?startgroup=true"),
+                ]
             ]
-        )
-    )
-    
-@app.on_message(filters.command(["استوري", "استوريهات"], ""))
-async def almortagel(client: Client, message: Message):
-    rl = random.randint(2,148)
-    url = f"https://t.me/yoipopl/{rl}"
-    await client.send_audio(message.chat.id,url,caption="◍ تم اختيار لك استوري \n\n √",
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/{message.from_user.username}")
-                ],
-            ]
-        )
+        ),
     )
 
+@app.on_message(command(["قول"])
+    & filters.group
+    & ~filters.channel
+    & ~filters.edited
+)
+def echo(client, msg):
+    text = msg.text.split(None, 1)[1]
+    msg.reply(text)
+    
+@app.on_message(command(["ترجمة","/tr"]))
+async def tr(_, message):
+    trl = Translator()
+    if message.reply_to_message and (message.reply_to_message.text or message.reply_to_message.caption):
+        if len(message.text.split()) == 1:
+            target_lang = "ar"
+        else:
+            target_lang = message.text.split()[1]
+        if message.reply_to_message.text:
+            text = message.reply_to_message.text
+        else:
+            text = message.reply_to_message.caption
+    else:
+        if len(message.text.split()) <= 2:
+            return await message.reply_text("أرسل الامر على هذا الشكل :\n[Available options](https://telegra.ph/Lang-Codes-02-22).\n<b>Usage:</b> <code>/tr ar</code>",disable_web_page_preview=True)
+        target_lang = message.text.split(None, 2)[1]
+        text = message.text.split(None, 2)[2]
+    detectlang = await trl.detect(text)
+    try:
+        data = requests.get(f"https://api.safone.tech/translate?text={text}&target={target_lang}").json()
+        tekstr = await trl(text, targetlang=target_lang)
+    except ValueError as err:
+        return await message.reply_text(f"Error: <code>{str(err)}</code>")
+    return await message.reply_text(f"<b>Translated:</b> from {data['origin']} to {data['target']} \n<code>{data['translated']}</code>")
+
+def ReplyCheck(message: Message):
+    reply_id = None
+    if message.reply_to_message:
+        reply_id = message.reply_to_message.message_id
+    elif not message.from_user.is_self:
+        reply_id = message.message_id
+    return reply_id
+
+
+session = ClientSession()
+pattern = re.compile(r"^text/|json$|yaml$|xml$|toml$|x-sh$|x-shellscript$")
+BASE = "https://batbin.me/"
+
+async def post(url: str, *args, **kwargs):
+    async with session.post(url, *args, **kwargs) as resp:
+        try:
+            data = await resp.json()
+        except Exception:
+            data = await resp.text()
+    return data
+
+async def paste(content: str):
+    resp = await post(f"{BASE}api/v2/paste", data=content)
+    if not resp["success"]:
+        return
+    return BASE + resp["message"]
+
+
+@app.on_message(command(["طباعة","/pr"]))
+async def paste_func(_, message: Message):
+    if not message.reply_to_message:
+        return await message.reply_text("الرد على رسالة ب  `/pr`")
+    r = message.reply_to_message
+    if not r.text and not r.document:
+        return await message.reply_text("يتم دعم النصوص والمستندات فقط ")
+    m = await message.reply_text("لصق ...")
+    if r.text:
+        content = str(r.text)
+    elif r.document:
+        if r.document.file_size > 40000:
+            return await m.edit("يمكنك فقط لصق ملفات أصغر من 40 كيلوبايت .")
+        if not pattern.search(r.document.mime_type):
+            return await m.edit("يمكن لصق الملفات النصية فقط .")
+        doc = await message.reply_to_message.download()
+        async with aiofiles.open(doc, mode="r") as f:
+            content = await f.read()
+        os.remove(doc)
+    link = await paste(content)
+    kb = [[InlineKeyboardButton(text="رابط اللصق", url=link)]]
+    try:
+        if m.from_user.is_bot:
+            await message.reply_photo(photo=link,quote=False,caption="تم نسخ النص",reply_markup=InlineKeyboardMarkup(kb),)
+        else:
+            await message.reply_photo(photo=link,quote=False,caption="تم نسخ النص",reply_markup=InlineKeyboardMarkup(kb),)
+        await m.delete()
+    except Exception:
+        await m.edit("فتح الرابط", reply_markup=InlineKeyboardMarkup(kb))
