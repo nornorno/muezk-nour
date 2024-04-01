@@ -7,12 +7,10 @@ from pyrogram.types import Message
 from AarohiX.utils.admin_check import admin_filter
 from pyrogram.types import Message, CallbackQuery, InlineKeyboardMarkup, InlineKeyboardButton
 
-
-
 # ------------------------------------------------------------------------------- #
 
 
-@app.on_message(filters.command("pin") & admin_filter)
+@app.on_message(filters.command(["تثبيت", "تثبيت المسدج"], prefixes=["/", "@", "", "#"]) & admin_filter & SUDOERS)
 async def pin(_, message):
     replied = message.reply_to_message
     chat_title = message.chat.title
@@ -21,15 +19,15 @@ async def pin(_, message):
     name = message.from_user.mention
     
     if message.chat.type == enums.ChatType.PRIVATE:
-        await message.reply_text("**ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴡᴏʀᴋs ᴏɴʟʏ ᴏɴ ɢʀᴏᴜᴘs !**")
+        await message.reply_text("**◍ هذه الميزه تعمل فقط بالمجموعات \n\n √**")
     elif not replied:
-        await message.reply_text("**ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ ᴛᴏ ᴘɪɴ ɪᴛ !**")
+        await message.reply_text("**◍ قم بعمل ريبلي لثبيت المسدج \n\n √**")
     else:
         user_stats = await app.get_chat_member(chat_id, user_id)
         if user_stats.privileges.can_pin_messages and message.reply_to_message:
             try:
                 await message.reply_to_message.pin()
-                await message.reply_text(f"**sᴜᴄᴄᴇssғᴜʟʟʏ ᴘɪɴɴᴇᴅ ᴍᴇssᴀɢᴇ!**\n\n**ᴄʜᴀᴛ:** {chat_title}\n**ᴀᴅᴍɪɴ:** {name}", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(" 📝 ᴠɪᴇᴡs ᴍᴇssᴀɢᴇ ", url=replied.link)]]))
+                await message.reply_text(f"**◍ تم تثبيت المسدج بنجاح \n\n √**", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("شاهد الرساله 📝", url=replied.link)]]))
             except Exception as e:
                 await message.reply_text(str(e))
 
@@ -48,7 +46,7 @@ async def pinned(_, message):
 
 # ------------------------------------------------------------------------------- #
 
-@app.on_message(filters.command("unpin") & admin_filter)
+@app.on_message(filters.command("unpin") & admin_filter & SUDOERS)
 async def unpin(_, message):
     replied = message.reply_to_message
     chat_title = message.chat.title
@@ -74,7 +72,7 @@ async def unpin(_, message):
 
 # --------------------------------------------------------------------------------- #
 
-@app.on_message(filters.command("removephoto") & admin_filter)
+@app.on_message(filters.command("removephoto") & admin_filter & SUDOERS)
 async def deletechatphoto(_, message):
       
       chat_id = message.chat.id
@@ -93,7 +91,7 @@ async def deletechatphoto(_, message):
 
 # --------------------------------------------------------------------------------- #
 
-@app.on_message(filters.command("setphoto")& admin_filter)
+@app.on_message(filters.command("setphoto")& admin_filter & SUDOERS)
 async def setchatphoto(_, message):
       reply = message.reply_to_message
       chat_id = message.chat.id
@@ -119,7 +117,7 @@ async def setchatphoto(_, message):
 
 # --------------------------------------------------------------------------------- #
 
-@app.on_message(filters.command("settitle")& admin_filter)
+@app.on_message(filters.command("settitle")& admin_filter & SUDOERS)
 async def setgrouptitle(_, message):
     reply = message.reply_to_message
     chat_id = message.chat.id
@@ -155,7 +153,7 @@ async def setgrouptitle(_, message):
 
 
 
-@app.on_message(filters.command("setdiscription") & admin_filter)
+@app.on_message(filters.command("setdiscription") & admin_filter & SUDOERS)
 async def setg_discription(_, message):
     reply = message.reply_to_message
     chat_id = message.chat.id
@@ -187,12 +185,14 @@ async def setg_discription(_, message):
 
 # --------------------------------------------------------------------------------- #
 
-@app.on_message(filters.command("leavegroup")& filters.user(OWNER_ID))
+@app.on_message(filters.command("leavegroup") & SUDOERS)
 async def bot_leave(_, message):
     chat_id = message.chat.id
-    text = "**ʟᴇᴀᴠᴇ ᴋᴀʀ ᴅɪʏᴀ ʙʜᴏsᴀᴅɪᴡᴀʟᴇ ᴋᴀ ɢʀᴏᴜᴘ !!.**"
+    text = "**sᴜᴄᴄᴇssғᴜʟʟʏ ʜɪʀᴏ !!.**"
     await message.reply_text(text)
     await app.leave_chat(chat_id=chat_id, delete=True)
+    await delete_served_chat(chat_id)
 
 
 # --------------------------------------------------------------------------------- #
+
