@@ -10,10 +10,10 @@ async def ktm(_: Client, message: Message):
         member = requests.get(f"https://api.telegram.org/bot{app.bot_token}/getChatMember?chat_id={message.chat.id}&user_id={message.from_user.id}").json()
         memberB = requests.get(f"https://api.telegram.org/bot{app.bot_token}/getChatMember?chat_id={message.chat.id}&user_id={message.reply_to_message.from_user.id}").json()
         if member["result"]["status"] == "administrator":
-            if memberB["result"]["status"] in ["creator", "administrator"]:return await message.reply("- لا يمكنك كتم مشرف او مالك", reply_to_message_id=message.message_id)
-            if message.reply_to_message.from_user.id in muted: return await message.reply("- هذا المستخدم مكتوم!")
+            if memberB["result"]["status"] in ["creator", "administrator"]:return await message.reply("◍ لايمكننى كتم الشخص بسبب رتبته \n\n √", reply_to_message_id=message.message_id)
+            if message.reply_to_message.from_user.id in muted: return await message.reply("◍ العضو محظور بالفعل \n\n √")
             muted.append(message.reply_to_message.from_user.id)
-            await message.reply_text(f"تم كتم  العضو\n: {message.reply_to_message.from_user.mention}\n\n بنجاح ")
+            await message.reply_text(f"◍ المستخدم {message.reply_to_message.from_user.mention}\n\n ◍ تم كتمه من قبل {message.from_user.mention}")
 
             return
         elif member["result"]["status"] == "creator":
