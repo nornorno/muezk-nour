@@ -3,11 +3,11 @@ from pyrogram import filters
 from pyrogram.enums import ChatType
 from pyrogram.errors import MessageDeleteForbidden, RPCError
 from pyrogram.types import Message
-from AarohiX.utils.admin_check import admin_filter
-from AarohiX import app
+from VIPMUSIC.utils.vip_ban import admin_filter
+from VIPMUSIC import app
 
 
-@app.on_message(filters.command("purge") & admin_filter)
+@app.on_message(filters.command(["حذف", "مسح"], prefixes=["/", "@", "", "#"]) & admin_filter)
 async def purge(app: app, msg: Message):
     
     if msg.chat.type != ChatType.SUPERGROUP:
@@ -47,7 +47,7 @@ async def purge(app: app, msg: Message):
 
 
 
-@app.on_message(filters.command("مسح") & admin_filter)
+@app.on_message(filters.command(["مسح"], prefixes=["/", "@", "", "#"]) & admin_filter)
 async def spurge(app: app, msg: Message):
 
     if msg.chat.type != ChatType.SUPERGROUP:
