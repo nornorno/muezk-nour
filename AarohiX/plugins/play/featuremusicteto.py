@@ -1,17 +1,19 @@
 import asyncio
-import os
-import time
-import requests
-import aiohttp
-from config import START_IMG_URL
-from pyrogram import filters
-from pyrogram import Client
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup
-from strings.filters import command
-from AarohiX import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
+
+
+import random
+
+
 from AarohiX import app
-from asyncio import gather
-from pyrogram.errors import FloodWait
+
+
+from pyrogram.types import (InlineKeyboardButton,
+
+
+                            InlineKeyboardMarkup, Message)
+
+
+from pyrogram import filters, Client
 
 
 
