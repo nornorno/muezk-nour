@@ -1,13 +1,11 @@
-from asyncio import sleep
-from pyrogram import filters
-from pyrogram.enums import ChatType
-from pyrogram.errors import MessageDeleteForbidden, RPCError
-from pyrogram.types import Message
-from Aarohix import admin_filter import admin_filter
 from AarohiX import app
+from AarohiX.misc import SUDOERS
+from pyrogram import * 
+from pyrogram.types import *
+from AarohiX.utils.admin_check import admin_filter
 
 
-@app.on_message(filters.command(["حذف", "مسح"], prefixes=["/", "@", "", "#"]) & admin_filter)
+@app.on_message(filters.command("purge") & admin_filter)
 async def purge(app: app, msg: Message):
     
     if msg.chat.type != ChatType.SUPERGROUP:
@@ -47,7 +45,7 @@ async def purge(app: app, msg: Message):
 
 
 
-@app.on_message(filters.command(["مسح"], prefixes=["/", "@", "", "#"]) & admin_filter)
+@app.on_message(filters.command("مسح") & admin_filter)
 async def spurge(app: app, msg: Message):
 
     if msg.chat.type != ChatType.SUPERGROUP:
