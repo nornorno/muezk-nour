@@ -6,7 +6,7 @@ from pyrogram.enums import ChatType, ChatMemberStatus
 from pyrogram.errors import UserNotParticipant
 from pyrogram.types import ChatPermissions
 from Aarohix import app
-from Aarohix.utils import admin_filter
+from Aarohix import admin_filter
 
 SPAM_CHATS = {}
 
