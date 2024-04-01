@@ -3,8 +3,8 @@ from pyrogram import filters
 from pyrogram.enums import ChatType
 from pyrogram.errors import MessageDeleteForbidden, RPCError
 from pyrogram.types import Message
-from VIPMUSIC.utils.vip_ban import admin_filter
-from VIPMUSIC import app
+from Aarohix import admin_filter import admin_filter
+from AarohiX import app
 
 
 @app.on_message(filters.command(["حذف", "مسح"], prefixes=["/", "@", "", "#"]) & admin_filter)
