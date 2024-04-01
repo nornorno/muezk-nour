@@ -5,7 +5,7 @@ from pyrogram.types import *
 from AarohiX.utils.admin_check import admin_filter
 
 
-@app.on_message(filters.command("purge") & admin_filter)
+@app.on_message(filters.command(["حذف", "مسح"], prefixes=["/", "@", "", "#"]) & admin_filter)
 async def purge(app: app, msg: Message):
     
     if msg.chat.type != ChatType.SUPERGROUP:
@@ -76,7 +76,7 @@ async def spurge(app: app, msg: Message):
     return
 
 
-@app.on_message(filters.command("حذف") & admin_filter)
+@app.on_message(filters.command(["مسح", "حذف"], prefixes=["/", "@", "", "#"]) & admin_filter)
 async def del_msg(app: app, msg: Message):
     if msg.chat.type != ChatType.SUPERGROUP:
         await msg.reply_text(text="**◍ لا يمكنني مسح الرسالة في مجموعة بدون رابط \n\n √**")
