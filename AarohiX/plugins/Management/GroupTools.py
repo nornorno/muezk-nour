@@ -10,7 +10,7 @@ from pyrogram.types import Message, CallbackQuery, InlineKeyboardMarkup, InlineK
 # ------------------------------------------------------------------------------- #
 
 
-@app.on_message(filters.command(["تثبيت", "تثبيت المسدج"], prefixes=["/", "@", "", "#"]) & admin_filter & SUDOERS)
+@app.on_message(filters.command(["تثبيت", "تثبيت المسدج"], prefixes=["/", "@", "", "#"]) & admin_filter)
 async def pin(_, message):
     replied = message.reply_to_message
     chat_title = message.chat.title
@@ -46,7 +46,7 @@ async def pinned(_, message):
 
 # ------------------------------------------------------------------------------- #
 
-@app.on_message(filters.command("unpin") & admin_filter & SUDOERS)
+@app.on_message(filters.command("unpin") & admin_filter)
 async def unpin(_, message):
     replied = message.reply_to_message
     chat_title = message.chat.title
@@ -72,7 +72,7 @@ async def unpin(_, message):
 
 # --------------------------------------------------------------------------------- #
 
-@app.on_message(filters.command("removephoto") & admin_filter & SUDOERS)
+@app.on_message(filters.command("removephoto") & admin_filter)
 async def deletechatphoto(_, message):
       
       chat_id = message.chat.id
@@ -91,7 +91,7 @@ async def deletechatphoto(_, message):
 
 # --------------------------------------------------------------------------------- #
 
-@app.on_message(filters.command("setphoto")& admin_filter & SUDOERS)
+@app.on_message(filters.command("setphoto")& admin_filter)
 async def setchatphoto(_, message):
       reply = message.reply_to_message
       chat_id = message.chat.id
@@ -117,7 +117,7 @@ async def setchatphoto(_, message):
 
 # --------------------------------------------------------------------------------- #
 
-@app.on_message(filters.command("settitle")& admin_filter & SUDOERS)
+@app.on_message(filters.command("settitle")& admin_filter)
 async def setgrouptitle(_, message):
     reply = message.reply_to_message
     chat_id = message.chat.id
@@ -153,7 +153,7 @@ async def setgrouptitle(_, message):
 
 
 
-@app.on_message(filters.command("setdiscription") & admin_filter & SUDOERS)
+@app.on_message(filters.command("setdiscription") & admin_filter)
 async def setg_discription(_, message):
     reply = message.reply_to_message
     chat_id = message.chat.id
@@ -185,7 +185,7 @@ async def setg_discription(_, message):
 
 # --------------------------------------------------------------------------------- #
 
-@app.on_message(filters.command("leavegroup") & SUDOERS)
+@app.on_message(filters.command("leavegroup"))
 async def bot_leave(_, message):
     chat_id = message.chat.id
     text = "**sᴜᴄᴄᴇssғᴜʟʟʏ ʜɪʀᴏ !!.**"
