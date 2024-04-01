@@ -124,7 +124,7 @@ async def unpinall(c: Client, m: Message):
         return
 
 
-@use_chat_lang()
+
 async def banrep(c: Client, m: Message, strings):
     try:
         if m.reply_to_message.from_user.id == 5680297831:
@@ -197,7 +197,7 @@ async def banrep(c: Client, m: Message, strings):
         return
 
 
-@use_chat_lang()
+
 async def banuser(c: Client, m: Message, strings):
     m.text = m.text[4:]
     result = await check_username(m, c)
@@ -274,7 +274,7 @@ async def banuser(c: Client, m: Message, strings):
         return
 
 
-@use_chat_lang()
+
 async def unbanrep(c: Client, m: Message, strings):
     try:
         check = await get_available_bot(c, m)
@@ -298,7 +298,7 @@ async def unbanrep(c: Client, m: Message, strings):
         return
 
 
-@use_chat_lang()
+
 async def unbanuser(c: Client, m: Message, strings):
     m.text = m.text[10:]
     result = await check_username(m, c)
@@ -366,7 +366,7 @@ def ban_user_test_byuser(m, u):
     return leader
 
 
-@use_chat_lang()
+
 async def kickrep(c: Client, m: Message, strings):
     try:
         n = c.iter_chat_members(m.chat.id, filter="Administrators")
@@ -431,7 +431,7 @@ async def kickrep(c: Client, m: Message, strings):
         return
 
 
-@use_chat_lang()
+
 async def kickuser(c: Client, m: Message, strings):
     m.text = m.text[4:]
     result = await check_username(m, c)
@@ -500,7 +500,7 @@ async def kickuser(c: Client, m: Message, strings):
         return
 
 
-@use_chat_lang()
+
 async def muterep(c: Client, m: Message, strings):
     try:
         if m.reply_to_message.from_user.id == 5680297831:
@@ -577,7 +577,7 @@ async def muterep(c: Client, m: Message, strings):
         return
 
 
-@use_chat_lang()
+
 async def muteuser(c: Client, m: Message, strings):
     m.text = m.text[4:]
     result = await check_username(m, c)
@@ -658,7 +658,7 @@ async def muteuser(c: Client, m: Message, strings):
         return
 
 
-@use_chat_lang()
+
 async def unmuterep(c: Client, m: Message, strings):
     try:
         check = await get_available_bot(c, m)
@@ -682,7 +682,7 @@ async def unmuterep(c: Client, m: Message, strings):
         return
 
 
-@use_chat_lang()
+
 async def unmuteuser(c: Client, m: Message, strings):
     m.text = m.text[10:]
     result = await check_username(m, c)
@@ -750,7 +750,7 @@ def mute_user_test_byuser(m, u):
     return leader
 
 
-@use_chat_lang()
+
 async def tban(c: Client, m: Message, strings):
     try:
         n = c.iter_chat_members(m.chat.id, filter="Administrators")
@@ -824,7 +824,7 @@ async def tban(c: Client, m: Message, strings):
         return
 
 
-@use_chat_lang()
+
 async def tmute(c: Client, m: Message, strings):
     try:
         n = c.iter_chat_members(m.chat.id, filter="Administrators")
@@ -898,7 +898,7 @@ async def tmute(c: Client, m: Message, strings):
         return
 
 
-@use_chat_lang()
+
 async def purge(c: Client, m: Message, strings):
     try:
         """ purge upto the replied message """
