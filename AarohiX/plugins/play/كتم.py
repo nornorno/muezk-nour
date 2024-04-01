@@ -13,13 +13,13 @@ async def ktm(_: Client, message: Message):
             if memberB["result"]["status"] in ["creator", "administrator"]:return await message.reply("◍ لايمكننى كتم الشخص بسبب رتبته \n\n √", reply_to_message_id=message.message_id)
             if message.reply_to_message.from_user.id in muted: return await message.reply("◍ العضو محظور بالفعل \n\n √")
             muted.append(message.reply_to_message.from_user.id)
-            await message.reply_text(f"◍ المستخدم {message.reply_to_message.from_user.mention}\n\n◍ تم كتمه من قبل {message.from_user.mention}")
+            await message.reply_text(f"◍ المستخدم {message.reply_to_message.from_user.mention}\n◍ تم كتمه من قبل {message.from_user.mention}")
 
             return
         elif member["result"]["status"] == "creator":
             if message.reply_to_message.from_user.id in muted: return await message.reply("◍ العضو مكتوم بالفعل\n√")
             muted.append(message.reply_to_message.from_user.id)
-            await message.reply_text(f"◍ المستخدم {message.reply_to_message.from_user.mention}\n\n◍ تم كتمه من قبل {message.from_user.mention} \n\n √")
+            await message.reply_text(f"◍ المستخدم {message.reply_to_message.from_user.mention}\n◍ تم كتمه من قبل {message.from_user.mention} \n\n √")
             return
         else: await message.reply("◍ يجب ان تكون معك رتبه على الاقل لكى تستطيع كتم العضو \n\n √", reply_to_message_id=message.message_id)
 
@@ -31,13 +31,13 @@ async def unktm(_: Client, message: Message):
         if member["result"]["status"] == "administrator":
             if message.reply_to_message.from_user.id not in muted: return await message.reply("◍ المستخدم غير مكتوم بالاصل \n\n √")
             muted.remove(message.reply_to_message.from_user.id)
-            await message.reply_text(f"◍ المستخدم {message.reply_to_message.from_user.mention}\n\n◍ تم فك كتمه من قبل {message.from_user.mention}")
+            await message.reply_text(f"◍ المستخدم {message.reply_to_message.from_user.mention}\n◍ تم فك كتمه من قبل {message.from_user.mention} \n\n √")
 
             return
         elif member["result"]["status"] == "creator":
             if message.reply_to_message.from_user.id not in muted: return await message.reply("◍ المستخدم غير مكتوم بالاصل \n\n √")
             muted.remove(message.reply_to_message.from_user.id)
-            await message.reply_text(f"◍ المستخدم {message.reply_to_message.from_user.mention}\n\n◍ تم فك كتمه من قبل {message.from_user.mention}")
+            await message.reply_text(f"◍ المستخدم {message.reply_to_message.from_user.mention}\n◍ تم فك كتمه من قبل {message.from_user.mention}")
 
             return
         else: await message.reply_text("- يجب ان تكون ادمن على الاقل لإستخدام هذا الامر.", reply_to_message_id=message.message_id)
