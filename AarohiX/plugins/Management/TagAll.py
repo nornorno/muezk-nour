@@ -1,12 +1,9 @@
 import asyncio
-import random
-from pyrogram import Client, filters
-from pyrogram.enums import ChatType
 from pyrogram.enums import ChatType, ChatMemberStatus
-from pyrogram.errors import UserNotParticipant
-from pyrogram.types import ChatPermissions
-from Aarohix import app
-from Aarohix import admin_filter
+from AarohiX import app
+from pyrogram import filters
+from AarohiX.utils.admin_check import admin_filter
+
 
 SPAM_CHATS = {}
 
