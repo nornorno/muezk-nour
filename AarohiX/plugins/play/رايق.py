@@ -1,12 +1,8 @@
-import asyncio
 from pyrogram import Client, filters
-from random import choice
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
-from pyrogram.types import (InlineKeyboardButton,CallbackQuery,
-                            InlineKeyboardMarkup, Message)
-from Aarhoix import app
-from typing import Union
-from pyrogram.types import InlineKeyboardButton
+from pyrogram.types import Message
+import requests 
+from AarohiX import app
+
 
 RAEAK = ["فاجره","حلوه","فخامه","جميله","خوش","جميله","يععععع","وحشه","مش حلوه","حلوه ياعم","خليك بيها","حبتها","غيرها يعم"]
 
