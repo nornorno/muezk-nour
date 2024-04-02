@@ -6,7 +6,7 @@ from AarohiX.utils.database import get_served_chats
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 
-START_IMG_URL = "https://graph.org/file/59c42465cc959d133b022.jpg"
+START_IMG_URL = "https://telegra.ph/file/0677e881a84925cb9c789.jpg"
 
 
 MESSAGE = f"""◍ بوت ميوزك لتشغيل الاغاني بالمجموعات والقنوات الاسرع من باقي البوتات 💌
