@@ -39,7 +39,7 @@ async def next_quran(c,cq):
             name = quran[(i+(number*10))-1]["surah"]
             list.append(ikb(name, callback_data = f"play-{(i+(number*10))-1}"))
         keyboard.append(list)
-        keyboard.append([ikb(". السابق .", callback_data = f"next-{number-1}")])
+        keyboard.append([ikb(". السابـق .", callback_data = f"next-{number-1}")])
     elif number == 0:
         for i in range(1,11):
             if len(list) == 2:
