@@ -2,7 +2,7 @@ import asyncio
 import os
 from pyrogram.types import CallbackQuery
 from Aarhoix import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
-from Aarhoix import app
+from AarohiX import app
 import requests
 import pyrogram
 from pyrogram import Client, emoji 
