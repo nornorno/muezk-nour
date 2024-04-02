@@ -16,12 +16,11 @@ from random import  choice, randint
 @app.on_message(filters.command(["جمالي"], ""))
 async def madison(client: Client, message: Message):
     usr = await client.get_users(message.from_user.id)
-   wish_count = random.randint(1, 100)
 async for photo in client.get_chat_photos(message.from_user.id, limit=1):
-                    await message.reply_photo(photo.file_id,       caption=f"""**⭓ᴍᴜꜱɪᴄ✘ᴛᴇᴛᴏ♪
+                    await message.reply_photo(photo.file_id,       caption=f"""*⭓ᴍᴜꜱɪᴄ✘ᴛᴇᴛᴏ♪
 ╮⦿ هل خلق الجمال لتختصره عيناك اما
 │᚜⦿ عيناك خلقت لتقنعني ان لا جمال بعدها
-╯⦿ جمال عيناك {wish_count}% ❤️**""", 
+╯⦿ جمال عيناك {wish_count}% ❤️*""", 
         reply_markup=InlineKeyboardMarkup(
             [
                 [
