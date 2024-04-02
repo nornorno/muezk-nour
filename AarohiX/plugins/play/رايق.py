@@ -1,8 +1,9 @@
+import asyncio
 from pyrogram import Client, filters
-from pyrogram.types import Message
-import requests 
-from AarohiX import app
-
+from strings import get_string
+from strings.filters import command
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, ReplyKeyboardMarkup
+from AarohiX import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
 
 RAEAK = ["فاجره","حلوه","فخامه","جميله","خوش","جميله","يععععع","وحشه","مش حلوه","حلوه ياعم","خليك بيها","حبتها","غيرها يعم"]
 
