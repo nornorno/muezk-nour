@@ -18,12 +18,10 @@ async def madison(client: Client, message: Message):
     usr = await client.get_users(message.from_user.id)
     name = usr.first_name
     async for photo in client.get_chat_photos(message.from_user.id, limit=1):
-    love_percentage = random.randint(10, 100)
-    love_message = get_random_message(love_percentage)  
                     await message.reply_photo(photo.file_id,       caption=f"""**⭓ᴍᴜꜱɪᴄ✘ᴛᴇᴛᴏ♪
 ╮⦿ هل خلق الجمال لتختصره عيناك اما
 │᚜⦿ عيناك خلقت لتقنعني ان لا جمال بعدها
-╯⦿ جمال عيناك {love_percentage}% ❤️**""", 
+╯⦿ جمال عيناك (60) % ❤️**""", 
         reply_markup=InlineKeyboardMarkup(
             [
                 [
