@@ -21,7 +21,7 @@ async def madison(client: Client, message: Message):
                     await message.reply_photo(photo.file_id,       caption=f"""**⭓ᴍᴜꜱɪᴄ✘ᴛᴇᴛᴏ♪
 ╮⦿ هل خلق الجمال لتختصره عيناك اما
 │᚜⦿ عيناك خلقت لتقنعني ان لا جمال بعدها
-╯⦿ جمال عيناك (60) % ❤️**""", 
+╯⦿ جمال عيناك ({wish_count}) % ❤️**""", 
         reply_markup=InlineKeyboardMarkup(
             [
                 [
