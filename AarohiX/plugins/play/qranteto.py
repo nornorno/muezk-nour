@@ -1,10 +1,10 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup as ikm, InlineKeyboardButton as ikb
-from AarohiX import app 
+from AnonXMusic import app 
 import json 
 from config import BANNED_USERS
 import requests 
-from AarohiX.core.call import Anony
+from AnonXMusic.core.call import dil
 
 
 @app.on_message(filters.command(["قران"],""))
