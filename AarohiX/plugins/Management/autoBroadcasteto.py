@@ -3,39 +3,28 @@ import datetime
 from AarohiX import app
 from pyrogram import Client
 from AarohiX.utils.database import get_served_chats
-from config import START_IMG_URL, AUTO_GCAST_MSG, AUTO_GCAST, LOGGER_ID
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-AUTO_GCASTS = f"{AUTO_GCAST}" if AUTO_GCAST else False
+
+START_IMG_URL = "https://graph.org/file/59c42465cc959d133b022.jpg"
 
 
-MESSAGE = f"""*◍ بوت ميوزك لتشغيل الاغاني بالمجموعات والقنوات الاسرع من باقي البوتات 💌
+MESSAGE = f"""◍ بوت ميوزك لتشغيل الاغاني بالمجموعات والقنوات الاسرع من باقي البوتات 💌
 
 اوامر تسليه بالبوت و الحمايه من الاسبام ❄
 
 - يدعم خاصيه تفعيل الاذان و المزيد من المميزات التي لا حصر لها
 
-معرف البوت 🤖 [/start](https://t.me/{app.username}?start=help) لفحص البوت
-
-➲ المعـرف : @{app.username}"""
+➲ المعـرف : @UUIYBOT"
+"""
 
 BUTTON = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton("๏ ᴋɪᴅɴᴀᴘ ᴍᴇ ๏", url=f"https://t.me/UUIYBOT?startgroup=s&admin=delete_messages+manage_video_chats+pin_messages+invite_users")
+            InlineKeyboardButton("» ᴀᴅᴅ ᴍᴇ «", url=f"https://t.me/{app.username}?startgroup=s&admin=delete_messages+manage_video_chats+pin_messages+invite_users")
         ]
     ]
 )
-
-caption = f"""{AUTO_GCAST_MSG}""" if AUTO_GCAST_MSG else MESSAGE
-
-TEXT = """**ᴀᴜᴛᴏ ɢᴄᴀsᴛ ɪs ᴇɴᴀʙʟᴇᴅ sᴏ ᴀᴜᴛᴏ ɢᴄᴀsᴛ/ʙʀᴏᴀᴅᴄᴀsᴛ ɪs ᴅᴏɪɴ ɪɴ ᴀʟʟ ᴄʜᴀᴛs ᴄᴏɴᴛɪɴᴜᴏᴜsʟʏ. **\n**ɪᴛ ᴄᴀɴ ʙᴇ sᴛᴏᴘᴘᴇᴅ ʙʏ ᴘᴜᴛ ᴠᴀʀɪᴀʙʟᴇ [ᴀᴜᴛᴏ_ɢᴄᴀsᴛ = (ᴋᴇᴇᴘ ʙʟᴀɴᴋ & ᴅᴏɴᴛ ᴡʀɪᴛᴇ ᴀɴʏᴛʜɪɴɢ)]**"""
-
-async def send_text_once():
-    try:
-        await app.send_message(LOGGER_ID, TEXT)
-    except Exception as e:
-        pass
 
 async def send_message_to_chats():
     try:
@@ -43,28 +32,18 @@ async def send_message_to_chats():
 
         for chat_info in chats:
             chat_id = chat_info.get('chat_id')
-            if isinstance(chat_id, int):  # Check if chat_id is an integer
+            if isinstance(chat_id, int):  
                 try:
-                    await app.send_photo(chat_id, photo=START_IMG_URL, caption=caption, reply_markup=BUTTON)
-                    await asyncio.sleep(3)  # Sleep for 100 second between sending messages
+                    await app.send_photo(chat_id, photo=START_IMG_URL, caption=MESSAGE, reply_markup=BUTTON)
+                    await asyncio.sleep(3)
                 except Exception as e:
-                    pass  # Do nothing if an error occurs while sending message
+                    pass  
     except Exception as e:
-        pass  # Do nothing if an error occurs while fetching served chats
+        pass  
 
 async def continuous_broadcast():
-    await send_text_once()  # Send TEXT once when bot starts
-
     while True:
-        if AUTO_GCAST:
-            try:
-                await send_message_to_chats()
-            except Exception as e:
-                pass
-
-        # Wait for 100000 seconds before next broadcast
-        await asyncio.sleep(100000)
-
-# Start the continuous broadcast loop if AUTO_GCAST is True
-if AUTO_GCAST:  
-    asyncio.create_task(continuous_broadcast())
+        await send_message_to_chats()
+        await asyncio.sleep(50000)  
+        
+asyncio.create_task(continuous_broadcast())
