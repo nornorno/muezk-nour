@@ -13,7 +13,7 @@ trans = Translator()
 async def translate(_, message) -> None:
     reply_msg = message.reply_to_message
     if not reply_msg:
-        await message.reply_text("◍ قم بعمل ريبلي للترجمه \n\n √")
+        await message.reply_text("◍ قم بعمل ريبلي للترجمه علي الرساله\n\n √")
         return
     if reply_msg.caption:
         to_translate = reply_msg.caption
@@ -32,7 +32,7 @@ async def translate(_, message) -> None:
         dest = "ar"
     translation = await trans(to_translate, sourcelang=source, targetlang=dest)
     reply = (
-        f"ᴛʀᴀɴsʟᴀᴛᴇᴅ ғʀᴏᴍ {source} to {dest}:\n"
-        f"{translation.text}"
+        f"◍ تم بنجاح ترجمه اللغه\n"
+        f"الترجمه :{translation.text}"
     )
     await message.reply_text(reply)
