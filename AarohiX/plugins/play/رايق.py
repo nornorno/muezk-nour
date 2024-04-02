@@ -17,8 +17,8 @@ from random import  choice, randint
 async def madison(client: Client, message: Message):
     usr = await client.get_users(message.from_user.id)
    name = usr.first_name
-wish_count = random.randint(1, 100)
-    async for photo in client.get_chat_photos(message.from_user.id, limit=1):
+   wish_count = random.randint(1, 100)
+async for photo in client.get_chat_photos(message.from_user.id, limit=1):
                     await message.reply_photo(photo.file_id,       caption=f"""**⭓ᴍᴜꜱɪᴄ✘ᴛᴇᴛᴏ♪
 ╮⦿ هل خلق الجمال لتختصره عيناك اما
 │᚜⦿ عيناك خلقت لتقنعني ان لا جمال بعدها
