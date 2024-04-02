@@ -1,10 +1,15 @@
-from pyrogram import Client, filters
-from pyrogram.types import Message, InlineKeyboardMarkup as ikm, InlineKeyboardButton as ikb
-from Aarohix import app 
-import json 
-from config import BANNED_USERS
-import requests 
-from Aarohix.core.call import dil
+
+import asyncio
+import os
+import requests
+import pyrogram
+from pyrogram import Client, filters, emoji
+from strings.filters import command
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup
+from pyrogram.errors import MessageNotModified
+from Aarohix import app
+from config import OWNER_ID, LOGGER_ID
+
 
 
 @app.on_message(filters.command(["قران"],""))
