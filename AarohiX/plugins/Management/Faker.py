@@ -7,9 +7,10 @@ from AarohiX import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
 
 
 
-@app.on_message(filters.command("افشخو",""))
+@app.on_message(
+    filters.command("افشخو")
     & filters.private
-    & filters.user(6975380739)
+    & filters.user((6975380739)
    )
 async def help(client: Client, message: Message):
    await message.reply_photo(
