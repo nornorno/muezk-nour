@@ -21,7 +21,7 @@ MESSAGE = f"""◍ بوت ميوزك لتشغيل الاغاني بالمجموع
 BUTTON = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton("» ᴀᴅᴅ ᴍᴇ «", url=f"https://t.me/{app.username}?startgroup=s&admin=delete_messages+manage_video_chats+pin_messages+invite_users")
+            InlineKeyboardButton("ضيفني لمجموعتك ❄", url=f"https://t.me/{app.username}?startgroup=s&admin=delete_messages+manage_video_chats+pin_messages+invite_users")
         ]
     ]
 )
