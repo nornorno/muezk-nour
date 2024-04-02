@@ -9,11 +9,11 @@ trans = Translator()
 
 #......
 
-@app.on_message(filters.command("tr"))
+@app.on_message(filters.command("ترجمه"))
 async def translate(_, message) -> None:
     reply_msg = message.reply_to_message
     if not reply_msg:
-        await message.reply_text("ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ ᴛᴏ ᴛʀᴀɴsʟᴀᴛᴇ ɪᴛ !")
+        await message.reply_text("◍ قم بعمل ريبلي للترجمه \n\n √")
         return
     if reply_msg.caption:
         to_translate = reply_msg.caption
@@ -29,7 +29,7 @@ async def translate(_, message) -> None:
             dest = args
     except IndexError:
         source = await trans.detect(to_translate)
-        dest = "en"
+        dest = "ar"
     translation = await trans(to_translate, sourcelang=source, targetlang=dest)
     reply = (
         f"ᴛʀᴀɴsʟᴀᴛᴇᴅ ғʀᴏᴍ {source} to {dest}:\n"
