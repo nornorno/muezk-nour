@@ -57,13 +57,13 @@ async def unpin(_, message):
     if message.chat.type == enums.ChatType.PRIVATE:
         await message.reply_text("*◍ هذه الميزه تعمل فقط بالمجموعات \n\n √*")
     elif not replied:
-        await message.reply_text("**ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ ᴛᴏ ᴜɴᴘɪɴ ɪᴛ !**")
+        await message.reply_text("*◍ قم بعمل ريبلي علي المسدج \n\n `*")
     else:
         user_stats = await app.get_chat_member(chat_id, user_id)
         if user_stats.privileges.can_pin_messages and message.reply_to_message:
             try:
                 await message.reply_to_message.unpin()
-                await message.reply_text(f"**sᴜᴄᴄᴇssғᴜʟʟʏ ᴜɴᴘɪɴɴᴇᴅ ᴍᴇssᴀɢᴇ!**\n\n**ᴄʜᴀᴛ:** {chat_title}\n**ᴀᴅᴍɪɴ:** {name}", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(" 📝 ᴠɪᴇᴡs ᴍᴇssᴀɢᴇ ", url=replied.link)]]))
+                await message.reply_text(f"*◍ تم الغاء تثبيت الرساله بنجاح \n\n √*", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("شاهد الرساله 📝", url=replied.link)]]))
             except Exception as e:
                 await message.reply_text(str(e))
 
@@ -188,7 +188,7 @@ async def setg_discription(_, message):
 @app.on_message(filters.command(["بوتي غادر", "تيتو غادر"], prefixes=["/", "@", "", "#"]) & admin_filter)
 async def bot_leave(_, message):
     chat_id = message.chat.id
-    text = "**◍◍ تم الخروج بنجاح من المجموعه \n\n √*"
+    text = "*◍ تم الخروج بنجاح من المجموعه \n\n √*"
     await message.reply_text(text)
     await app.leave_chat(chat_id=chat_id, delete=True)
     await delete_served_chat(chat_id)
