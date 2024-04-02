@@ -1,12 +1,8 @@
-#▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒✯ TETOXMUSIC ✯▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-#▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒✯  T.me/WZAERE   ✯▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-#▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒✯ T.me/WX_PM ✯▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-
 import asyncio
 import os
 from pyrogram.types import CallbackQuery
-from AarohiX import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
-from Aarohix import app
+from AnonX import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
+from AnonX import app
 import requests
 import pyrogram
 from pyrogram import Client, emoji 
@@ -16,6 +12,7 @@ from strings.filters import command
 from config import OWNER_ID
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup
 from pyrogram.errors import MessageNotModified
+
 
 
 @app.on_message(command(["ميوزك", "الميوزك", "الاوامر"]))
