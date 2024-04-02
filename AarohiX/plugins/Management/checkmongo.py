@@ -7,7 +7,7 @@ from AarohiX  import app as bot
 mongo_url_pattern = re.compile(r'mongodb(?:\+srv)?:\/\/[^\s]+')
 
 
-@app.on_message(filters.command(["فحص المنجو"], prefixes=["/", "@", "", "#"])
+@bot.on_message(filters.command("فحص",""))
 async def mongo_command(client, message: Message):
     if len(message.command) < 2:
         await message.reply("Please enter your MongoDB URL after the command. Example: /mongochk your_mongodb_url")
