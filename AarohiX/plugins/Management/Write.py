@@ -4,7 +4,7 @@ from config import  BOT_USERNAME
 from AarohiX import app
 import requests
 
-@app.on_message(filters.command("اكتبلي"))
+@app.on_message(filters.command("اكتبلي",""))
 async def handwrite(_, message: Message):
     if message.reply_to_message:
         text = message.reply_to_message.text
@@ -14,7 +14,6 @@ async def handwrite(_, message: Message):
     write = requests.get(f"https://apis.xditya.me/write?text={text}").url
 
     caption = f"""
-◍ تم انشاء الكتابه بنجاح ❄
 ✨ بواسطـه : [˹ᴍᴜꜱɪᴄ ✘ ᴛᴇᴛᴏ˼ 🫧](https://t.me/{BOT_USERNAME})
 🥀 لــ : {message.from_user.mention}
 """
