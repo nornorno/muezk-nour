@@ -15,7 +15,7 @@ async def brah(_, msg):
 
 @app.on_message(filters.video_chat_ended)
 async def brah2(_, msg):
-       await msg.reply("**◍ تم انهاء المحادثه الصوتية 🥺 \n\n √**")
+       await msg.reply("*◍ تم انهاء المحادثه الصوتية 🥺 \n\n √*")
 
 
 @app.on_message(filters.video_chat_members_invited)
