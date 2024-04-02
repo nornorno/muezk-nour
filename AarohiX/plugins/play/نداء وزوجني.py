@@ -1,9 +1,17 @@
 import asyncio
-import random
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
-from pyrogram import filters, Client
+import os
+from pyrogram.types import CallbackQuery
+from AarohiX import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
 from AarohiX import app
+import requests
+import pyrogram
+from pyrogram import Client, emoji 
+from config import *
+from pyrogram import filters
 from strings.filters import command
+from config import OWNER_ID
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup
+from pyrogram.errors import MessageNotModified
 
 @app.on_message(command(['نداء','ن']))
 def call_random_member(client, message):
