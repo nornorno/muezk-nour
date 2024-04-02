@@ -185,7 +185,7 @@ async def setg_discription(_, message):
 
 # --------------------------------------------------------------------------------- #
 
-@app.on_message(filters.command(["بوتي اخرج من الجروب", "بوتي غادر المجموعه النجسه دي"], prefixes=["/", "@", "", "#"])
+@app.on_message(filters.command(["بوتي غادر", "تيتو غادر"], prefixes=["/", "@", "", "#"]) & admin_filter)
 async def bot_leave(_, message):
     chat_id = message.chat.id
     text = "**◍◍ تم الخروج بنجاح من المجموعه \n\n √*"
