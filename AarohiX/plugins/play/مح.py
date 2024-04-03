@@ -16,12 +16,18 @@ from random import  choice, randint
 async def maker(client: Client, message: Message):
     await message.reply_video(
         video="https://telegra.ph/file/83e7bdf0e2dad83402160.mp4",
-        caption="-القميل هذا  ❲  ❳ 🫧\n- بعتلك بوسه يا  ❲  ❳ \n عيب كده اي المحن ده 🤭",
+        caption="-القميل هذا  ❲ {0} ❳ 🫧\n- بعتلك بوسه يا  ❲  ❳ \n عيب كده اي المحن ده 🤭",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        name, url=f"https://t.me/{message.from_user.username}")
+                        "المقبول 🫧", url=f"t.me/t7_au"
+                    ),
+                ],
+                [
+                    InlineKeyboardButton(
+                        "القـابل 🤭", url=f"t.me/t7_au"
+                    ),
                 ],
             ]
         ),
