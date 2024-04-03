@@ -9,8 +9,8 @@ import config
     command(["مح"])
 )
 async def maker(client: Client, message: Message):
-    await message.reply_photo(
-        photo="https://telegra.ph/file/83e7bdf0e2dad83402160.mp4",
+    await message.reply_video(
+        video="https://telegra.ph/file/83e7bdf0e2dad83402160.mp4",
         caption="※ هذا القميل ",
         reply_markup=InlineKeyboardMarkup(
             [
