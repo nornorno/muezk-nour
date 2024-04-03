@@ -11,17 +11,17 @@ import config
 async def maker(client: Client, message: Message):
     await message.reply_video(
         video="https://telegra.ph/file/83e7bdf0e2dad83402160.mp4",
-        caption="※ هذا القميل ",
+        caption="-القميل هذا  ❲ {message.from_user.mention} ❳ 🫧\n- بعتلك بوسه يا  ❲ {message.reply_to_message.from_user.mention} ❳ \n عيب كده اي المحن ده 🤭",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "Ahmed Teto", url=f"tg://openmessage?user_id={config.OWNER_ID}"
+                        "المقبول 🫧", url=f"{message.from_user.mention}"
                     ),
                 ],
                 [
                     InlineKeyboardButton(
-                        "Updates", url=config.SUPPORT_CHAT
+                        "القـابل 🤭", url=f"{message.reply_to_message.from_user.mention}"
                     ),
                 ],
             ]
