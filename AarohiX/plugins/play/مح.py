@@ -1,13 +1,18 @@
-from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
-from strings.filters import command
+import asyncio
+
+import os
+import time
+import requests
+from config import START_IMG_URL
+from pyrogram import filters
+import random
+from pyrogram import Client
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup
+
 from AarohiX import app
-import config
+from random import  choice, randint
 
-
-@app.on_message(
-    command(["مح"])
-)
+@app.on_message(filters.command(["مح"], ""))
 async def maker(client: Client, message: Message):
     await message.reply_video(
         video="https://telegra.ph/file/83e7bdf0e2dad83402160.mp4",
@@ -16,13 +21,7 @@ async def maker(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "المقبول 🫧", url=f""
-                    ),
-                ],
-                [
-                    InlineKeyboardButton(
-                        "القـابل 🤭", url=""
-                    ),
+                        name, url=f"https://t.me/{message.from_user.username}")
                 ],
             ]
         ),
