@@ -28,7 +28,7 @@ async def welcome(client, chat_member_updated):
             messagee = f"◈ المستخدم {user.username} ({user.first_name}) تم طرده من الدردشة بواسطة البوت"
         else:
             if kicked_by is not None:
-                message = f"منع التصفيه التـلقائي 🫧\n\n- ◈ المستخدم : [{kicked_by.first_name}](tg://user?id={kicked_by.id}) تـم تنزيله من قائمه الادمنيه\n◈ السبب : حاول تصفيه مجموعتك [{user.first_name}](tg://user?id={user.id})"
+                message = f"منع التصفيه التـلقائي 🫧\n\n◈ المستخدم : [{kicked_by.first_name}](tg://user?id={kicked_by.id}) تـم تنزيله من قائمه الادمنيه\n◈ السبب : حاول تصفيه مجموعتك وطرد العضو : [{user.first_name}](tg://user?id={user.id})"
                 try:
                     await client.ban_chat_member(chat_member_updated.chat.id, kicked_by.id)
                 except Exception as e:
@@ -128,3 +128,4 @@ def promote_g_admin(client, message):
     	if tom.user.id == tom_id and (tom.status == enums.ChatMemberStatus.OWNER or tom.status == enums.ChatMemberStatus.ADMINISTRATOR):
     		client.promote_chat_member(chat_id, user_id, ToM)
     		message.reply(f"◍ تم رفع {user_id} ادمن بنجاح \n\n √")
+    		
