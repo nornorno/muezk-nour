@@ -16,12 +16,12 @@ async def maker(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "المقبول 🤭", url=f"[{user.first_name}](tg://user?id={user.id})"
+                        "المقبول 🤭", url=f"القميل[{user.first_name}](tg://user?id={user.id})"
                     ),
                 ],
                 [
                     InlineKeyboardButton(
-                        "القابل", url=f"{message.from_user.mention}"
+                        "القابل", url=f"القميله{message.from_user.mention}"
                     ),
                 ],
             ]
