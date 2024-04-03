@@ -68,13 +68,13 @@ async def update_(client, message, _):
         "tsnrhtdd"[(format // 10 % 10 != 1) * (format % 10 < 4) * format % 10 :: 4],
     )
     for info in repo.iter_commits(f"HEAD..origin/{config.UPSTREAM_BRANCH}"):
-        updates += f"<b>~ #{info.count()}: <a href={REPO_}/commit/{info}>{info.summary}</a> بواسطة  -> {info.author}</b>\n\t\t\t\t<b> ~ تنزيل التحديثات :</b> {ordinal(int(datetime.fromtimestamp(info.committed_date).strftime('%d')))} {datetime.fromtimestamp(info.committed_date).strftime('%b')}, {datetime.fromtimestamp(info.committed_date).strftime('%Y')}\n\n"
-    _update_response_ = "<b>~ جاري تحديث السورس </b>\n\n~ يتم رفع التحديثات :\n\n<b><u>المطور :</u></b>\n\n"
+        updates += f"<b>~ #{info.count()}: <a href={REPO_}/commit/{info}>{info.summary}</a> Power By -> {info.author}</b>\n\t\t\t\t<b> - تنزيل التحديثات :</b> {ordinal(int(datetime.fromtimestamp(info.committed_date).strftime('%d')))} {datetime.fromtimestamp(info.committed_date).strftime('%b')}, {datetime.fromtimestamp(info.committed_date).strftime('%Y')}\n\n"
+    _update_response_ = "<b>⦿ جاري تحديث السورس </b>\n\n- يتم رفع التحديثات :\n\n<b><u>المطور : @WZAERE </u></b>\n\n"
     _final_updates_ = _update_response_ + updates
     if len(_final_updates_) > 4096:
         url = await DilBin(updates)
         nrs = await response.edit(
-            f"<b>~ جاري دفع التحديثات الجديدة الى السورس !</b>\n\n~التحديثات  \n\n<u><b>تحديث :</b></u>\n\n<a href={url}>اضغط هنا </a>"
+            f"<b>- جاري دفع التحديثات الجديدة الى السورس !</b>\n\n- التحديثات  \n\n<u><b>تحديث :</b></u>\n\n<a href={url}>اضغط هنا </a>"
         )
     else:
         nrs = await response.edit(_final_updates_, disable_web_page_preview=True)
@@ -139,3 +139,4 @@ async def restart_(_, message):
         "~ جاري الأن التحديث ."
     )
     os.system(f"kill -9 {os.getpid()} && bash start")
+    
