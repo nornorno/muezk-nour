@@ -5,10 +5,25 @@ from AarohiX import app
 import config
 
 
-
-@app.on_message(filters.command("مح", prefixes=""))
+@app.on_message(
+    command(["مح"])
+)
 async def maker(client: Client, message: Message):
-    await message.reply_video(
-        video="https://telegra.ph/file/dd1298fa95a28d6962705.jpg",
-        caption="※ هذا القميل {message.from_user.mention} \n※ بعتلك بوسه يا 😘♥ [{user.first_name}](tg://user?id={user.id})\n عيب كده اي المحن ده 😹",
-        
+    await message.reply_photo(
+        photo="https://telegra.ph/file/83e7bdf0e2dad83402160.mp4",
+        caption="※ هذا القميل ",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "Ahmed Teto", url=f"tg://openmessage?user_id={config.OWNER_ID}"
+                    ),
+                ],
+                [
+                    InlineKeyboardButton(
+                        "Updates", url=config.SUPPORT_CHAT
+                    ),
+                ],
+            ]
+        ),
+    )
