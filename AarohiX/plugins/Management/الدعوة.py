@@ -68,6 +68,4 @@ async def time_for_call(client, message):
             await message.reply(f"**- تم انهاء مكالمة الفيديو مدتها {day[0]} ايام**")  
         else:
             await message.reply(f"**- تم إنهاء مكالمة الفيديو مدتها {day[0]} يوم**")
-
-app.start()
-idle()
+               
