@@ -5,8 +5,8 @@ from AarohiX import app
 import config
 
 
-@app.on_message(filters.command("مح") &  filters.private & SUDOERS)
-)
+
+@app.on_message(filters.command("مح", prefixes=""))
 async def maker(client: Client, message: Message):
     await message.reply_video(
         video="https://telegra.ph/file/dd1298fa95a28d6962705.jpg",
