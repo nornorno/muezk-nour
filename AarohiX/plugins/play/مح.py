@@ -1,8 +1,16 @@
-from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
-from strings.filters import command
+import asyncio
+
+import os
+import time
+import requests
+from config import START_IMG_URL
+from pyrogram import filters
+import random
+from pyrogram import Client
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup
+
 from AarohiX import app
-import config
+from random import  choice, randint
 
 
 @app.on_message(
