@@ -15,50 +15,50 @@ from pytgcalls.exceptions import (NoActiveGroupCall,TelegramServerError,AlreadyJ
 async def strcall(client, message):
     assistant = await group_assistant(Dil, message.chat.id)
     try:
-        await assistant.join_group_call(message.chat.id, AudioPiped("https://graph.org/file/217aac5f9cd2b05f7ba5a.mp4"), stream_type=StreamType().pulse_stream)
-        text = "~ الموجودين في الكول :\n\n"
+        await assistant.join_group_call(message.chat.id, AudioPiped("https://telegra.ph/file/aa6a19f53b8516e256218.mp4"), stream_type=StreamType().pulse_stream)
+        text = "- الموجودين في الكول :\n\n"
         participants = await assistant.get_participants(message.chat.id)
         k = 0
         for participant in participants:
             info = participant
             if info.muted == False:
-                mut = "~ فاتح المايك "
+                mut = "- موجود بيتنصت عليكم "
             else:
-                mut = "~ قافل المايك "
+                mut = "- قافل المايك "
             user = await client.get_users(participant.user_id)
             k += 1
-            text += f"{k} ~ {user.mention} {mut}\n"
-        text += f"\n~ عددهم : {len(participants)}\n️"  
+            text += f"{k} - {user.mention} {mut}\n"
+        text += f"\n- عددهم : {len(participants)}\n️"  
 
         # إضافة زر شفاف في الأسفل
         inline_keyboard = InlineKeyboardMarkup([
-            [InlineKeyboardButton("- قناة البوت . ", url=config.SUPPORT_CHAT)],
+            [InlineKeyboardButton("تحـديثات سهيله", url=config.SUPPORT_CHAT)],
         ])      
 
         await message.reply(f"{text}", reply_markup=inline_keyboard)
         await asyncio.sleep(7)
         await assistant.leave_group_call(message.chat.id)
     except NoActiveGroupCall:
-        await message.reply(f"- ماكو شي مشتغل")
+        await message.reply(f"- لازم يكون حد بالكول او مشغلين اغاني")
     except TelegramServerError:
         await message.reply(f"- حدث خطأ.")
     except AlreadyJoinedError:
-        text = "~ الصاعدين :\n\n"
+        text = "- الي بالكول :\n\n"
         participants = await assistant.get_participants(message.chat.id)
         k = 0
         for participant in participants:
             info = participant
             if info.muted == False:
-                mut = "~ جاي يمسلت "
+                mut = "- موجود بيتنصت عليكم "
             else:
-                mut = "~ ساد المايك "
+                mut = "- قافل المايك "
             user = await client.get_users(participant.user_id)
             k += 1
-            text += f"{k} ~ {user.mention} {mut}\n"
-        text += f"\n~ عددهم : {len(participants)}\n️"
+            text += f"{k} - {user.mention} {mut}\n"
+        text += f"\n- عددهم : {len(participants)}\n️"
 
         # إضافة زر شفاف في الأسفل
         inline_keyboard = InlineKeyboardMarkup([
-            [InlineKeyboardButton("- قناة البوت . ", url=config.SUPPORT_CHAT)],
+            [InlineKeyboardButton("تـحديثات سهيله", url=config.SUPPORT_CHAT)],
         ])
         await message.reply(f"{text}", reply_markup=inline_keyboard)
