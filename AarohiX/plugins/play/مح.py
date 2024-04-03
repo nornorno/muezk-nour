@@ -1,20 +1,20 @@
-import asyncio
-from pyrogram.enums import ChatType, ChatMemberStatus
+from pyrogram import Client, filters
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
+from strings.filters import command
 from AarohiX import app
-from pyrogram import filters
-from AarohiX.utils.admin_check import admin_filter
+import config
 
 
 @app.on_message(filters.command(["مح"], ""))
 async def maker(client: Client, message: Message):
     await message.reply_video(
         video="https://telegra.ph/file/83e7bdf0e2dad83402160.mp4",
-        caption="القميل هذا [{m.user.first_name}](tg://user?id={m.user.id}) ",
+        caption="القميل هذا  ",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "المقبول 🫧", url=f"t.me/t7_au"
+                        "المقبول 🫧", url=f"tg://openmessage?user_id={message.from_user.mention}"
                     ),
                 ],
                 [
