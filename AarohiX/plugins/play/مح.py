@@ -16,7 +16,7 @@ from random import  choice, randint
 async def maker(client: Client, message: Message):
     await message.reply_video(
         video="https://telegra.ph/file/83e7bdf0e2dad83402160.mp4",
-        caption="-القميل هذا  ❲ {0} ❳ 🫧\n- بعتلك بوسه يا  ❲  ❳ \n عيب كده اي المحن ده 🤭",
+        caption="-القميل هذا  {message.from_user.mention} 🫧\n- بعتلك بوسه يا  ❲  ❳ \n عيب كده اي المحن ده 🤭",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
