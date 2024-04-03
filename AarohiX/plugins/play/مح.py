@@ -1,16 +1,8 @@
-import asyncio
-
-import os
-import time
-import requests
-from config import START_IMG_URL
-from pyrogram import filters
-import random
-from pyrogram import Client
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup
-
+from pyrogram import Client, filters
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
+from strings.filters import command
 from AarohiX import app
-from random import  choice, randint
+import config
 
 
 @app.on_message(
@@ -19,7 +11,7 @@ from random import  choice, randint
 async def maker(client: Client, message: Message):
     await message.reply_video(
         video="https://telegra.ph/file/83e7bdf0e2dad83402160.mp4",
-        caption="-القميل هذا  ❲ {message.from_user.mention} ❳ 🫧\n- بعتلك بوسه يا  ❲ {message.reply_to_message.from_user.mention} ❳ \n عيب كده اي المحن ده 🤭",
+        caption="-القميل هذا  ❲ {0} ❳ 🫧\n- بعتلك بوسه يا  ❲ {message.reply_to_message.from_user.mention} ❳ \n عيب كده اي المحن ده 🤭",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
