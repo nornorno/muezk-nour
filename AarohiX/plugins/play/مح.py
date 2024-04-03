@@ -7,8 +7,8 @@ import config
 
 @app.on_message(filters.command(["مح"], ""))
 async def maker(client: Client, message: Message):
-    await message.reply_video(
-        video="https://telegra.ph/file/83e7bdf0e2dad83402160.mp4",
+    await message.reply_animation(
+        animation="https://telegra.ph/file/83e7bdf0e2dad83402160.mp4",
         caption="القميل هذا  ",
         reply_markup=InlineKeyboardMarkup(
             [
