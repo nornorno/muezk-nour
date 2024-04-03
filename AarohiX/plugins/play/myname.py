@@ -7,8 +7,8 @@ from pyrogram import filters
 from pyrogram import Client
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup
 from strings.filters import command
-from ArohiX import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
-from ArohiX import app
+from AarohiX import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
+from AarohiX import app
 from asyncio import gather
 from pyrogram.errors import FloodWait
 
