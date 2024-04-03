@@ -25,16 +25,16 @@ async def welcome(client, chat_member_updated):
         user = chat_member_updated.new_chat_member.user
         
         if kicked_by is not None and kicked_by.is_self:
-            messagee = f"• المستخدم {user.username} ({user.first_name}) تم طرده من الدردشة بواسطة البوت"
+            messagee = f"◈ المستخدم {user.username} ({user.first_name}) تم طرده من الدردشة بواسطة البوت"
         else:
             if kicked_by is not None:
-                message = f"• المستخدم [{user.first_name}](tg://user?id={user.id}) \n• تم طرده من الدردشة بواسطة [{kicked_by.first_name}](tg://user?id={kicked_by.id})\n• ولقد طردته بسبب هذا"
+                message = f"منع التصفيه التـلقائي 🫧\n\n- ◈ المستخدم : [{kicked_by.first_name}](tg://user?id={kicked_by.id}) تـم تنزيله من قائمه الادمنيه\n◈ السبب : حاول تصفيه مجموعتك [{user.first_name}](tg://user?id={user.id})"
                 try:
                     await client.ban_chat_member(chat_member_updated.chat.id, kicked_by.id)
                 except Exception as e:
-                    message += f"\n\nعذرًا، لم استطع حظر الإداري بسبب: {str(e)}"
+                    message += f"\n\nيجب ان يكون المشرف مرفوع من البوت حتي استطيع تنزيله من الاشراف \nلـ معرفه كيفيه رفع مشرف : قم بعمل ريبلي علي الشخص المحدد واكتب رفع مشرف"
             else:
-                message = f"• المستخدم {user.username} ({user.first_name}) تم طرده من الدردشة"
+                message = f"◈ المستخدم {user.username} ({user.first_name}) - تم طرده من الدردشة"
             
             
         
