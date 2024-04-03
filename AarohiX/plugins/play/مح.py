@@ -1,16 +1,9 @@
 import asyncio
-import os
-import time
-import requests
-import aiohttp
-from pyrogram import filters
-from pyrogram import Client
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup
-from strings.filters import command
-from AarohiX import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
+from pyrogram.enums import ChatType, ChatMemberStatus
 from AarohiX import app
-from asyncio import gather
-from pyrogram.errors import FloodWait
+from pyrogram import filters
+from AarohiX.utils.admin_check import admin_filter
+
 
 @app.on_message(filters.command(["مح"], ""))
 async def maker(client: Client, message: Message):
