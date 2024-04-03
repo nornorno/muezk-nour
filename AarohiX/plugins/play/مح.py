@@ -16,12 +16,12 @@ async def maker(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "المقبول 🫧", url=f"{message.from_user.mention}"
+                        "المقبول 🫧", url=f""
                     ),
                 ],
                 [
                     InlineKeyboardButton(
-                        "القـابل 🤭", url=f"{message.reply_to_message.from_user.mention}"
+                        "القـابل 🤭", url=""
                     ),
                 ],
             ]
