@@ -16,7 +16,7 @@ from pyrogram.errors import FloodWait
 async def maker(client: Client, message: Message):
     await message.reply_video(
         video="https://telegra.ph/file/83e7bdf0e2dad83402160.mp4",
-        caption="القميل هذا {user.mention} ",
+        caption="القميل هذا [{m.user.first_name}](tg://user?id={m.user.id}) ",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
