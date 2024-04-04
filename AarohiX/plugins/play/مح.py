@@ -7,7 +7,7 @@ from pyrogram.errors import FloodWait
 
 
 
-@app.on_message(filters.command(["مح"], ""))
+@app.on_message(filters.command(["بوسه"], ""))
 async def maker(client: Client, message: Message):
      await message.reply_video(
         video="https://telegra.ph/file/83e7bdf0e2dad83402160.mp4",
