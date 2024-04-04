@@ -6,7 +6,7 @@ from pyrogram import enums
 
 from AarohiX import app
 
-@app.on_message(~filters.private & filters.command(["groupdata"]), group=2)
+@app.on_message(~filters.private & filters.command(["معلومات الجروب"]), group=2)
 async def instatus(app, message):
     start_time = time.perf_counter()
     user = await app.get_chat_member(message.chat.id, message.from_user.id)
@@ -37,16 +37,16 @@ async def instatus(app, message):
         timelog = "{:.2f}".format(end_time - start_time)
         await sent_message.edit(f"""
 **➖➖➖➖➖➖➖
-➲ NAME : {message.chat.title} ✅
-➲ MEMBERS : [ {count} ]🫂
+↢اسم المجموعة {message.chat.title} ✅
+↢عدد الأعضاء : [ {count} ]🫂
 ➖➖➖➖➖➖➖
-➲ BOTS : {bot}💡
-➲ ZOMBIES : {deleted_acc}🧟
-➲ BANNED : {banned}🚫
-➲ PREMIUM USERS : {premium_acc}🎁
+↢عدد البوتات : {bot}💡
+↢الحسابات المحذوفة : {deleted_acc}🧟
+↢المحظورين : {banned}🚫
+↢الحسابات المميزة  : {premium_acc}🎁
 ➖➖➖➖➖➖➖
-TIME TAKEN : {timelog} S**""")
+الوقت المستغرق : {timelog} S**""")
     else:
-        sent_message = await message.reply_text("ONLY ADMINS CAN USE THIS !")
+        sent_message = await message.reply_text("**ONLY ADMINS & DEV CAN USE THIS**")
         await sleep(5)
         await sent_message.delete()
