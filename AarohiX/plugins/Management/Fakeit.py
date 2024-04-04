@@ -5,7 +5,7 @@ from AarohiX import app
 
 random_user_api_url = 'https://randomuser.me/api/'
 
-@app.on_message(filters.command("fake", prefixes="/"))
+@app.on_message(filters.command("توليد عناوين", prefixes=""))
 def generate_fake_user_by_country(client, message):
     country_name = message.text.split("/fake ", maxsplit=1)[1]
     
@@ -21,6 +21,7 @@ def generate_fake_user_by_country(client, message):
         city = user_info['location']['city']
         street = user_info['location']['street']['name']
         zip_code = user_info['location']['postcode']
-        message.reply_text(f"**Name:** {first_name} {last_name}\n\n**Email:** {email}\n\n**Country:** {country}\n\n**State:** {state}\n\n**City:** {city}\n\n**Address:** {street}\n\n**ZIP Code:** {zip_code}")
+        message.reply_text(f"**↢ الاسم :** {first_name} {last_name}\n\n**↢ الدولة :** {country}\n\n**↢ الولاية :** {state}\n\n**↢ المدينة :** {city}\n\n**↢ العنوان :** {street}\n\n**↢ الرمز البريدي :** {zip_code}")
     else:
-        message.reply_text(f"Failed to generate fake user information for {country_name}.")
+        message.reply_text(f"↢ فشل في إنشاء معلومات مستخدم مزيفة لـ  {country_name}.")
+        
