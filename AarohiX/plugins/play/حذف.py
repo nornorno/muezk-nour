@@ -1,32 +1,11 @@
-from AarohiX.utils.database import is_music_playing, music_off
-from strings import get_command
+import os
 import asyncio
-from strings.filters import command
-from AarohiX import app
-from AarohiX.core.call import Yukki
-from AarohiX.utils.database import set_loop
-from AarohiX.utils.decorators import AdminRightsCheck
-from AarohiX.utils.database import is_muted, mute_on
-from AarohiX.utils.database import is_muted, mute_off
-from AarohiX.utils.database import is_music_playing, music_on
-from datetime import datetime
-from config import BANNED_USERS, MUSIC_BOT_NAME, PING_IMG_URL, lyrical, START_IMG_URL, MONGO_DB_URI, OWNER_ID
-from AarohiX.utils import bot_sys_stats
-from AarohiX.utils.decorators.language import language
-import random
-import config
-import re
-from config import GITHUB_REPO, SUPPORT_CHANNEL, SUPPORT_GROUP
-import string
-import lyricsgenius as lg
-from pyrogram.types import (InlineKeyboardButton,
-                            InlineKeyboardMarkup, Message)
 from pyrogram import Client, filters
-from AarohiX import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
-from typing import Union
-import sys
-from os import getenv
-from dotenv import load_dotenv
+from pyrogram.types import Message
+from pyrogram import enums
+from pyrogram.enums import ChatMemberStatus
+from pyrogram.errors import FloodWait
+from AarohiX import app
 
 load_dotenv()
 
