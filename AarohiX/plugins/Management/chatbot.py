@@ -12,78 +12,133 @@ from AarohiX import app
 from asyncio import gather
 from pyrogram.errors import FloodWait
 
+links = {}
 
 
-last_checked_time = None
-
-@app.on_message(filters.command("botchat")
-async def check_bots_command(client, message):
-    global last_checked_time
-    try:
-        # Start the Pyrogram client
-        userbot = await get_assistant(message.chat.id)
-
-        # Get current time before sending messages
-        start_time = datetime.now()
-
-        # Extract bot username de/user_id and limit from command
-        command_parts = message.command
-        if len(command_parts) >= 2:
-            target_id = command_parts[1]
-            limit = int(command_parts[2]) if len(command_parts) >= 3 else 10
-            response = ""  # Define response variable
-            try:
-                if target_id.startswith('@'):
-                    # If input starts with '@', consider it as username
-                    bot = await userbot.get_users(target_id)
-                    target_id = bot.id
-                else:
-                    target_id = int(target_id)
-                
-                # Get chat history with specified limit
-                async for bot_message in userbot.get_chat_history(target_id, limit=limit):
-                    if bot_message.from_user.id == target_id:
-                        response += f"{bot_message.text}\n"
-                    else:
-                        line = f"{bot_message.from_user.first_name}: {bot_message.text}\n"
-                        if bot_message.photo or bot_message.video:
-                            # Create a Telegraph link for photo or video
-                            media_link = await create_telegraph_media_link(bot_message)
-                            if media_link:
-                                line += f"Media: {media_link}\n"
-                        response += line
-            except Exception:
-                response += f"Unable to fetch chat history for {target_id}."
-            # Update last checked time
-            last_checked_time = start_time.strftime("%Y-%m-%d")
-            # Save conversation to a text file
-            filename = f"{target_id}_chat.txt"
-            with open(filename, "w") as file:
-                file.write(response)
-            await message.reply_text(f"Conversation saved to {filename}\nLast checked: {last_checked_time}")
-            # Send the text file
-            await message.reply_document(document=filename)
-            os.remove(filename)  # Delete the file after sending
-        else:
-            await message.reply_text("Invalid command format.\n\nPlease use /botchat Bot_Username/User_ID [limit]\n\nExample: `/botchat @example_bot 10`")
-    except Exception as e:
-        await message.reply_text(f"An error occurred: {e}")
-        print(f"Error occurred during /botchat command: {e}")
-
-async def create_telegraph_media_link(message: Message) -> str:
-    """
-    Create a Telegraph link for photo or video message.
-    """
-    file_path = None
-    if message.photo:
-        file_path = message.photo.file_id
-    elif message.video:
-        file_path = message.video.file_id
+@app.on_message(filters.group & filters.command(["userbotjoin", f"userbotjoin@{app.username}"]) & ~filters.private)
+async def join_group(client, message):
+    chat_id = message.chat.id
+    userbot = await get_assistant(message.chat.id)
+    userbot_id = userbot.id
+    done = await message.reply("**ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ɪɴᴠɪᴛɪɴɢ ᴀssɪsᴛᴀɴᴛ**...")
+    await asyncio.sleep(1)
+    # Get chat member object
+    chat_member = await app.get_chat_member(chat_id, app.id)
     
-    if file_path:
-        media_url = await app.download_media(file_path)
-        telegraph = Telegraph()
-        telegraph.create_account(short_name='pyrogram')
-        response = telegraph.upload_file(media_url)
-        return response["url"]
-    return ""
+    # Condition 1: Group username is present, bot is not admin
+    if message.chat.username and not chat_member.status == ChatMemberStatus.ADMINISTRATOR:
+        try:
+            await userbot.join_chat(message.chat.username)
+            await done.edit_text("**✅ ᴀssɪsᴛᴀɴᴛ ᴊᴏɪɴᴇᴅ.**")
+        except Exception as e:
+            await done.edit_text("**ɪ ɴᴇᴇᴅ ᴀᴅᴍɪɴ ᴘᴏᴡᴇʀ ᴛᴏ ᴜɴʙᴀɴ ɪɴᴠɪᴛᴇ ᴍʏ ᴀssɪsᴛᴀɴᴛ!**")
+            
+
+    # Condition 2: Group username is present, bot is admin, and Userbot is not banned
+    if message.chat.username and chat_member.status == ChatMemberStatus.ADMINISTRATOR:
+        try:
+            await userbot.join_chat(message.chat.username)
+            await done.edit_text("**✅ ᴀssɪsᴛᴀɴᴛ ᴊᴏɪɴᴇᴅ.**")
+        except Exception as e:
+            await done.edit_text(str(e))
+
+    
+    
+    # Condition 3: Group username is not present/group is private, bot is admin and Userbot is banned
+    if message.chat.username and chat_member.status == ChatMemberStatus.ADMINISTRATOR:
+        userbot_member = await app.get_chat_member(chat_id, userbot.id)
+        if userbot_member.status in [ChatMemberStatus.BANNED, ChatMemberStatus.RESTRICTED]:
+            try:
+                await app.unban_chat_member(chat_id, userbot.id)
+                await done.edit_text("**ᴀssɪsᴛᴀɴᴛ ɪs ᴜɴʙᴀɴɴɪɴɢ...**")
+                await userbot.join_chat(message.chat.username)
+                await done.edit_text("**ᴀssɪsᴛᴀɴᴛ ᴡᴀs ʙᴀɴɴᴇᴅ, ʙᴜᴛ ɴᴏᴡ ᴜɴʙᴀɴɴᴇᴅ, ᴀɴᴅ ᴊᴏɪɴᴇᴅ ᴄʜᴀᴛ ✅**")
+            except Exception as e:
+                await done.edit_text("**ғᴀɪʟᴇᴅ ᴛᴏ ᴊᴏɪɴ, ᴘʟᴇᴀsᴇ ɢɪᴠᴇ ʙᴀɴ ᴘᴏᴡᴇʀ ᴀɴᴅ ɪɴᴠɪᴛᴇ ᴜsᴇʀ ᴘᴏᴡᴇʀ ᴏʀ ᴜɴʙᴀɴ ᴀssɪsᴛᴀɴᴛ ᴍᴀɴᴜᴀʟʟʏ ᴛʜᴇɴ ᴛʀʏ ᴀɢᴀɪɴ ʙʏ /userbotjoin**")
+        return
+    
+    # Condition 4: Group username is not present/group is private, bot is not admin
+    if not message.chat.username and not chat_member.status == ChatMemberStatus.ADMINISTRATOR:
+        await done.edit_text("**ɪ ɴᴇᴇᴅ ᴀᴅᴍɪɴ ᴘᴏᴡᴇʀ ᴛᴏ ɪɴᴠɪᴛᴇ ᴍʏ ᴀssɪsᴛᴀɴᴛ.**")
+        
+
+
+    # Condition 5: Group username is not present/group is private, bot is admin
+    if not message.chat.username and chat_member.status == ChatMemberStatus.ADMINISTRATOR:
+        try:
+            try:
+                userbot_member = await app.get_chat_member(chat_id, userbot.id)
+                if userbot_member.status not in [ChatMemberStatus.BANNED, ChatMemberStatus.RESTRICTED]:
+                    await done.edit_text("**✅ ᴀssɪsᴛᴀɴᴛ ᴀʟʀᴇᴀᴅʏ ᴊᴏɪɴᴇᴅ.**")
+                    return
+            except Exception as e:
+                await done.edit_text("**ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ɪɴᴠɪᴛɪɴɢ ᴀssɪsᴛᴀɴᴛ**.")
+                await done.edit_text("**ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ɪɴᴠɪᴛɪɴɢ ᴀssɪsᴛᴀɴᴛ**...")
+                invite_link = await app.create_chat_invite_link(chat_id, expire_date=None)
+                await asyncio.sleep(2)
+                await userbot.join_chat(invite_link.invite_link)
+                await done.edit_text("**✅ ᴀssɪsᴛᴀɴᴛ ᴊᴏɪɴᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ.**")
+        except Exception as e:
+            await done.edit_text(f"**➻ ᴀᴄᴛᴜᴀʟʟʏ ɪ ғᴏᴜɴᴅ ᴛʜᴀᴛ ᴍʏ ᴀssɪsᴛᴀɴᴛ ʜᴀs ɴᴏᴛ ᴊᴏɪɴ ᴛʜɪs ɢʀᴏᴜᴘ ᴀɴᴅ ɪ ᴀᴍ ɴᴏᴛ ᴀʙʟᴇ ᴛᴏ ɪɴᴠɪᴛᴇ ᴍʏ ᴀssɪsᴛᴀɴᴛ ʙᴇᴄᴀᴜsᴇ [ ɪ ᴅᴏɴᴛ ʜᴀᴠᴇ  ɪɴᴠɪᴛᴇ ᴜsᴇʀ ᴀᴅᴍɪɴ ᴘᴏᴡᴇʀ ] sᴏ ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴍᴇ ɪɴᴠɪᴛᴇ ᴜsᴇʀs ᴀᴅᴍɪɴ ᴘᴏᴡᴇʀ ᴛʜᴇɴ ᴛʀʏ ᴀɢᴀɪɴ ʙʏ- /userbotjoin.**\n\n**➥ ɪᴅ »** @{userbot.username}")
+
+    
+    
+    # Condition 6: Group username is not present/group is private, bot is admin and Userbot is banned
+    if not message.chat.username and chat_member.status == ChatMemberStatus.ADMINISTRATOR:
+        userbot_member = await app.get_chat_member(chat_id, userbot.id)
+        if userbot_member.status in [ChatMemberStatus.BANNED, ChatMemberStatus.RESTRICTED]:
+            try:
+                await app.unban_chat_member(chat_id, userbot.id)
+                await done.edit_text("**ᴀssɪsᴛᴀɴᴛ ɪs ᴜɴʙᴀɴɴᴇᴅ**\n**ᴛʏᴘᴇ ᴀɢᴀɪɴ:- /userbotjoin.**")
+                invite_link = await app.create_chat_invite_link(chat_id, expire_date=None)
+                await asyncio.sleep(2)
+                await userbot.join_chat(invite_link.invite_link)
+                await done.edit_text("**ᴀssɪsᴛᴀɴᴛ ᴡᴀs ʙᴀɴɴᴇᴅ, ɴᴏᴡ ᴜɴʙᴀɴɴᴇᴅ, ᴀɴᴅ ᴊᴏɪɴᴇᴅ ᴄʜᴀᴛ✅**")
+            except Exception as e:
+                await done.edit_text(f"**➻ ᴀᴄᴛᴜᴀʟʟʏ ɪ ғᴏᴜɴᴅ ᴛʜᴀᴛ ᴍʏ ᴀssɪsᴛᴀɴᴛ ɪs ʙᴀɴɴᴇᴅ ɪɴ ᴛʜɪs ɢʀᴏᴜᴘ ᴀɴᴅ ɪ ᴀᴍ ɴᴏᴛ ᴀʙʟᴇ ᴛᴏ ᴜɴʙᴀɴ ᴍʏ ᴀssɪsᴛᴀɴᴛ ʙᴇᴄᴀᴜsᴇ [ ɪ ᴅᴏɴᴛ ʜᴀᴠᴇ  ʙᴀɴ ᴘᴏᴡᴇʀ ] sᴏ ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴍᴇ ʙᴀɴ ᴘᴏᴡᴇʀ ᴏʀ ᴜɴʙᴀɴ ᴍʏ ᴀssɪsᴛᴀɴᴛ ᴍᴀɴᴜᴀʟʟʏ ᴛʜᴇɴ ᴛʀʏ ᴀɢᴀɪɴ ʙʏ- /userbotjoin.**\n\n**➥ ɪᴅ »** @{userbot.username}")
+        return
+    
+    
+    
+
+
+        
+@app.on_message(filters.command("userbotleave") & filters.group & admin_filter)
+async def leave_one(client, message):
+    try:
+        userbot = await get_assistant(message.chat.id)
+        await userbot.leave_chat(message.chat.id)
+        await app.send_message(message.chat.id, "**✅ ᴜsᴇʀʙᴏᴛ sᴜᴄᴄᴇssғᴜʟʟʏ ʟᴇғᴛ ᴛʜɪs Chat.**")
+    except Exception as e:
+        print(e)
+
+
+@app.on_message(filters.command(["leaveall", f"leaveall@{app.username}"]) & SUDOERS)
+async def leave_all(client, message):
+    if message.from_user.id not in SUDOERS:
+        return
+
+    left = 0
+    failed = 0
+    lol = await message.reply("🔄 **ᴜsᴇʀʙᴏᴛ** ʟᴇᴀᴠɪɴɢ ᴀʟʟ ᴄʜᴀᴛs !")
+    try:
+        userbot = await get_assistant(message.chat.id)
+        async for dialog in userbot.get_dialogs():
+            if dialog.chat.id == -1001733534088:
+                continue
+            try:
+                await userbot.leave_chat(dialog.chat.id)
+                left += 1
+                await lol.edit(
+                    f"**ᴜsᴇʀʙᴏᴛ ʟᴇᴀᴠɪɴɢ ᴀʟʟ ɢʀᴏᴜᴘ...**\n\n**ʟᴇғᴛ:** {left} ᴄʜᴀᴛs.\n**ғᴀɪʟᴇᴅ:** {failed} ᴄʜᴀᴛs."
+                )
+            except BaseException:
+                failed += 1
+                await lol.edit(
+                    f"**ᴜsᴇʀʙᴏᴛ ʟᴇᴀᴠɪɴɢ...**\n\n**ʟᴇғᴛ:** {left} chats.\n**ғᴀɪʟᴇᴅ:** {failed} chats."
+                )
+            await asyncio.sleep(3)
+    finally:
+        await app.send_message(
+            message.chat.id, f"**✅ ʟᴇғᴛ ғʀᴏᴍ:* {left} chats.\n**❌ ғᴀɪʟᴇᴅ ɪɴ:** {failed} chats."
+        )
