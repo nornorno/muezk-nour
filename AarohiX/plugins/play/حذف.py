@@ -7,8 +7,6 @@ from pyrogram.enums import ChatMemberStatus
 from pyrogram.errors import FloodWait
 from AarohiX import app
 
-load_dotenv()
-
 BOT_USERNAME = getenv("BOT_USERNAME")
 
 START_IMG_URL = getenv("START_IMG_URL")
