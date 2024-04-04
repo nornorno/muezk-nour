@@ -15,7 +15,7 @@ user_command_count = {}
 SPAM_THRESHOLD = 2
 SPAM_WINDOW_SECONDS = 5
 
-@app.on_message(filters.command("user") & admin_filter)
+@app.on_message(filters.command("user")
 async def user_command(client, message):
     user_id = message.from_user.id
     current_time = time()
