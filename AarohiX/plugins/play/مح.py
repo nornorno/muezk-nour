@@ -1,16 +1,9 @@
 import asyncio
-import os
-import time
-import requests
-import aiohttp
-from pyrogram import filters
-from pyrogram import Client
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup
+from pyrogram import Client, filters
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from strings.filters import command
-from AarohiX import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
 from AarohiX import app
-from asyncio import gather
-from pyrogram.errors import FloodWait
+import config
 
 
 
