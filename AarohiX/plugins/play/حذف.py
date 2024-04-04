@@ -8,11 +8,7 @@ from pyrogram.errors import FloodWait
 from AarohiX import app
 
 
-@app.on_message(
-     command(["بوت حذف","رابط حذف","حذف حساب","عاوز احذف","حذف"])
-    & filters.group
-    & ~filters.edited
-)
+@app.on_message(filters.command(["رابط الحذف"], ""))
 async def khalid(client: Client, message: Message):
     await message.reply_photo(
         photo=f"https://telegra.ph/file/50228546bd85a32fecd6e.jpg",
