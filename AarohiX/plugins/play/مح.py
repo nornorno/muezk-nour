@@ -16,8 +16,6 @@ from pyrogram.errors import FloodWait
 
 @app.on_message(filters.command(["مح"], ""))
 async def maker(client: Client, message: Message):
-   usr = await client.get_users(message.from_user.id)
-    name = usr.first_name
      await message.reply_video(
         video="https://telegra.ph/file/83e7bdf0e2dad83402160.mp4",
         caption="القميل هذا  ",
