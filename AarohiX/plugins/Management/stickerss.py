@@ -43,7 +43,7 @@ async def upscale_image(client, message):
 
 
 
-@Yumikoo.on_message(filters.command("packkang"))
+@app.on_message(filters.command("packkang"))
 async def _packkang(Yumikoo :Yumikoo,message):  
     txt = await message.reply_text("**ᴘʀᴏᴄᴇssɪɴɢ....**")
     if not message.reply_to_message:
@@ -98,7 +98,7 @@ async def _packkang(Yumikoo :Yumikoo,message):
 
 
 
-@Yumikoo.on_message(filters.command(["stickerid","stid"]))
+@app.on_message(filters.command(["stickerid","stid"]))
 async def sticker_id(Yumikoo: Yumikoo, msg):
     if not msg.reply_to_message:
         await msg.reply_text("Reply to a sticker")        
