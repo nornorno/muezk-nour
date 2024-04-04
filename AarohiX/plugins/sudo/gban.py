@@ -21,7 +21,7 @@ from config import BANNED_USERS
 
 
 
-@app.on_message(filters.command(["حظر عام", "حظر ع"], prefixes=["/", "@", "", "#"]) & SUDOERS)
+@app.on_message(filters.command(["حظر عام", "حظر ع"], prefixes=["/", "@", "", "#"] & SUDOERS)
 @language
 async def global_ban(client, message: Message, _):
     if not message.reply_to_message:
