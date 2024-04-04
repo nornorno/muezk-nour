@@ -11,7 +11,7 @@ from pyrogram.errors import FloodWait
 @app.on_message(filters.command(["عاوز انصب","عاوزه انصب"], ""))
 async def maker(client: Client, message: Message):
      await message.reply_video(
-        video="https://telegra.ph/file/7a7e4909d7f78e8d4c685.mp4",
+        video="https://telegra.ph/file/5ec57dbb999310e0470d7.mp4",
         caption="◍ للتنصيب تواصـل مع تيتو ❲ [اطغط هنا](https://t.me/WXAERE) ❳ \n\n√",
             reply_markup=InlineKeyboardMarkup(
             [
