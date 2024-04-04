@@ -12,7 +12,7 @@ from pyrogram.errors import FloodWait
 async def maker(client: Client, message: Message):
      await message.reply_video(
         video="https://telegra.ph/file/7a7e4909d7f78e8d4c685.mp4",
-        caption="◍ مع السـلامه اراك لاحقـا 🥀❲ [اطغط هنا](https://t.me/LC6BOT) ❳",
+        caption="◍ مع السـلامه اراك لاحقـا 🥀 ❲ [اطغط هنا](https://t.me/LC6BOT) ❳",
             reply_markup=InlineKeyboardMarkup(
             [
                 [
