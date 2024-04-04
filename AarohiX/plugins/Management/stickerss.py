@@ -6,7 +6,7 @@ from strings.filters import command
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 
-@Yumikoo.on_message(filters.reply & filters.command("upscale"))
+@app.on_message(filters.reply & filters.command("upscale"))
 async def upscale_image(client, message):
     try:
         if not message.reply_to_message or not message.reply_to_message.photo:
