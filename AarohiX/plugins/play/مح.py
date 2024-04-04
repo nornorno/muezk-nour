@@ -16,7 +16,7 @@ async def maker(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        message.from_user.mention, url=f"https://t.me/{{message.from_user.mention}"
+                        user.mention, url=f"https://t.me/{user.mention}"
                     ),
                 ],
                 [
