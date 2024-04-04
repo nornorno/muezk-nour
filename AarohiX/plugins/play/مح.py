@@ -16,7 +16,7 @@ async def maker(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        user.first_name, url=f"[{user.first_name}](tg://user?id={user.id})"
+                        message.from_user.first_name, url=f"[{user.first_name}](tg://user?id={user.id})"
                     ),
                 ],
                 [
