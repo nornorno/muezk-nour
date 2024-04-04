@@ -6,7 +6,7 @@ import config
 
 
 @app.on_message(
-    command(["مطور السورس", "مبرمج السورس", "المطور السورس"])
+    command(["مطور السورس", "مبرمج السورس", "المطور"])
 )
 async def maker(client: Client, message: Message):
     await message.reply_photo(
