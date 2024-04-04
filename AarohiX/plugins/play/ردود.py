@@ -64,7 +64,7 @@ async def caesar(client: Client, message: Message):
         f"{a}")           
         
 htx = [
-"╮⦿ تم تفعيل حمايه لجروب: {chat.title}\n╯⦿ وتم رفع : 40 من الادمنيه بنجاح"
+"╮⦿ تم تفعيل حمايه لجروب\n╯⦿ وتم رفع الادمنيه بنجاح"
         ]
 
 @app.on_message(filters.command(["تفعيل"], ""), group=253)
