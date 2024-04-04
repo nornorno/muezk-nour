@@ -16,12 +16,12 @@ async def maker(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "Ahmed Teto", url=f"tg://openmessage?user_id={config.OWNER_ID}"
+                        message_reply_message.from_user.mention, url=f"https://t.me/{message_reply_message.from_user.mention}") 
                     ),
                 ],
                 [
                     InlineKeyboardButton(
-                        message.from_user.first_name, url=f"https://t.me/{message.from_user.username}")
+                        message.from_user.first_name, url=f"https://t.me/{message_reply_message.from_user.mention}")
                 ],
             ]
         )
