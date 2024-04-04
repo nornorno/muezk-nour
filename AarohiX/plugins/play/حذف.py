@@ -7,31 +7,6 @@ from pyrogram.enums import ChatMemberStatus
 from pyrogram.errors import FloodWait
 from AarohiX import app
 
-BOT_USERNAME = getenv("BOT_USERNAME")
-
-START_IMG_URL = getenv("START_IMG_URL")
-
-MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME")
-
-# Commands
-STOP_COMMAND = get_command("STOP_COMMAND")
-PAUSE_COMMAND = get_command("PAUSE_COMMAND")
-MUTE_COMMAND = get_command("MUTE_COMMAND")
-UNMUTE_COMMAND = get_command("UNMUTE_COMMAND")
-RESUME_COMMAND = get_command("RESUME_COMMAND")
-PING_COMMAND = get_command("PING_COMMAND")
-LYRICS_COMMAND = get_command("LYRICS_COMMAND")
-
-api_key = "Vd9FvPMOKWfsKJNG9RbZnItaTNIRFzVyyXFdrGHONVsGqHcHBoj3AI3sIlNuqzuf0ZNG8uLcF9wAd5DXBBnUzA"
-y = lg.Genius(
-    api_key,
-    skip_non_songs=True,
-    excluded_terms=["(Remix)", "(Live)"],
-    remove_section_headers=True,
-)
-y.verbose = False
-
-  
 
 @app.on_message(
      command(["بوت حذف","رابط حذف","حذف حساب","عاوز احذف","حذف"])
