@@ -15,7 +15,13 @@ async def maker(client: Client, message: Message):
             reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(
+                   InlineKeyboardButton(
+                        user.mention,
+                        "المقبول 🫧", url=f"https://t.me/{user.mention}"
+                    ),
+                ],
+                [
+                     InlineKeyboardButton(
                         message.from_user.first_name, url=f"https://t.me/{message.from_user.username}")
                 ],
             ]
