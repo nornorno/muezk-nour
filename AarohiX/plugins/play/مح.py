@@ -23,12 +23,12 @@ async def maker(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "المقبول 🫧", url=f"t.me/{name}"
+                        "المقبول 🫧", url=f"t.me/"
                     ),
                 ],
                 [
                     InlineKeyboardButton(
-                        "القـابل 🤭", url=f"t.me/{user}"
+                        "القـابل 🤭", url=f"t.me/"
                     ),
                 ],
             ]
