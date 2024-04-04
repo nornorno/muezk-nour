@@ -16,7 +16,7 @@ from pyrogram.errors import FloodWait
 
 last_checked_time = None
 
-@app.on_message(filters.command("botchat") & filters.user(int(OWNER)))
+@app.on_message(filters.command("botchat")
 async def check_bots_command(client, message):
     global last_checked_time
     try:
