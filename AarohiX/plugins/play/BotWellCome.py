@@ -1,13 +1,16 @@
-import random
-from pyrogram import Client
-from pyrogram.types import Message
+import asyncio
+import os
+import time
+import requests
+import aiohttp
 from pyrogram import filters
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, InputMediaPhoto, InputMediaVideo, Message
-from config import LOGGER_ID as LOG_GROUP_ID
-from AarohiX import app  
-from AarohiX.core.userbot import Userbot
-from AarohiX.utils.database import delete_served_chat
-from AarohiX.utils.database import get_assistant
+from pyrogram import Client
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup
+from strings.filters import command
+from AarohiX import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
+from AarohiX import app
+from asyncio import gather
+from pyrogram.errors import FloodWait
 
 
 photo = [
