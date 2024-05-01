@@ -1,5 +1,5 @@
 {
-    "name": "ميـوزك تيتو",
+    "name": "ميـوزك نور",
     "description": "- لـ تشغيـل الاغانـي والفيديـو والبثـوث المباشـرة فـي المكالمـات الصوتيـه والمرئيـة عـلى تيليجــرام",
     "logo": "https://telegra.ph/file/7cc32655659b325cc0f53.jpg",
     "keywords": [
@@ -91,7 +91,7 @@
       },
       "UPSTREAM_REPO": {
         "description": "لا تـغيرها ابـدا",
-        "value": "https://github.com/DevTeto/AFmusic",
+        "value": "https://github.com/noooortog/Cr-noor",
         "required": true
       }
     },
