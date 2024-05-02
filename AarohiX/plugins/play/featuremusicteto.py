@@ -24,7 +24,7 @@ from pyrogram import filters, Client
 & filters.group
  )
 async def mmmezat(client, message):
-        await message.reply_text(نور الحاكم قايمه مميزات سورس  :\n
+        await message.reply_text(f"""**⦿ نور الحاكم قايمه مميزات سورس  :\n
 ╮⦿  المطور
 │᚜⦿ سؤال
 │᚜⦿ مين في الكول 
