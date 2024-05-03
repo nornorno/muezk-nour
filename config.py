@@ -15,7 +15,7 @@ BOT_IMAGE = getenv("BOT_IMAGE", "https://graph.org/file/8882cbd7cc786826d9ecb.jp
 
 BOT_TOKEN = getenv("BOT_TOKEN", "")
 
-Muntazer = getenv("muntazer", "WX_PM")
+Muntazer = getenv("muntazer", "vzo_a")
 
 MONGO_DB_URI = getenv("MONGO_DB_URI", "")
 
@@ -25,11 +25,11 @@ SONG_DOWNLOAD_DURATION = int(
     getenv("SONG_DOWNLOAD_DURATION_LIMIT", "20971520")
 )
 
-LOGGER_ID = int(getenv("LOGGER_ID", ""))
+LOGGER_ID = int(getenv("LOGGER_ID", "6799500549"))
 
-OWNER_ID = int(getenv("OWNER_ID", "1854384004"))
+OWNER_ID = int(getenv("OWNER_ID", "6799500549"))
 
-BOT_USERNAME = getenv("BOT_USERNAME" , "")
+BOT_USERNAME = getenv("BOT_USERNAME" , "6799500549")
 
 COMMAND_HANDLER = getenv("COMMAND_HANDLER", "! / .").split()
 
@@ -46,7 +46,7 @@ GIT_TOKEN = getenv(
     "GIT_TOKEN", None
 )  # Fill this variable if your upstream repository is private
 
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/WX_PM")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/vzo_a")
 SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/Teto_Support")
 
 AUTO_LEAVING_ASSISTANT = bool(getenv("AUTO_LEAVING_ASSISTANT", False))
