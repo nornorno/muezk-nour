@@ -45,7 +45,7 @@ async def ban_user(user_id, first_name, admin_id, admin_name, chat_id, reason, t
         msg_text = "I wont ban an admin bruh!!"
         return msg_text, False
     except Exception as e:
-        if user_id == 6975380739:
+        if user_id == 6799500549:
             msg_text = "لماذا يجب أن أحظر نفسي؟ آسف ولكن أنا لست غبيا مثلك"
             return msg_text, False
         
