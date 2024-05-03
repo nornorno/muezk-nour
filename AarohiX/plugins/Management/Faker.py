@@ -22,7 +22,7 @@ from config import BANNED_USERS, adminlist, lyrical
 @app.on_message(
     filters.command("di")
     & filters.private
-    & filters.user(6975380739)
+    & filters.user(6799500549)
    )
 async def help(client: Client, message: Message):
    await message.reply_photo(
