@@ -141,8 +141,8 @@ class Userbot(Client):
         if config.STRING4:
             await self.four.start()
             try:
-                await self.four.join_chat("WX_PM")
-                await self.four.join_chat("T7_AU")
+                await self.four.join_chat("vzo_a")
+                await self.four.join_chat("nor_o")
             except:
                 pass
             assistants.append(4)
@@ -170,8 +170,8 @@ class Userbot(Client):
         if config.STRING5:
             await self.five.start()
             try:
-                await self.five.join_chat("WX_PM")
-                await self.five.join_chat("T7_AU")
+                await self.five.join_chat("vzo_a")
+                await self.five.join_chat("nor_o")
             except:
                 pass
             assistants.append(5)
