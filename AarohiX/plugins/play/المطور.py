@@ -16,7 +16,7 @@ async def maker(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "NooR Cr", url=f"tg://openmessage?user_id={config.OWNER_ID}"
+                        "𝙲𝚁 𝙽𝙾𝚄𝚁", url=f"https://t.me/nor_o"
                     ),
                 ],
                 [
