@@ -8,7 +8,7 @@ from AarohiX import app
 import re
 import sys
 
-GAME_MESSAGE = "𝗦𝗼𝘂𝗿𝗰𝗲 𝗧𝗲𝘁𝗼\n\n★¦ مرحبا بك عزيزي:\n★¦في قسم العاب سورس نور الحاكم\n\nᯓ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙲𝚁 𝙽𝙾𝚄𝚁 "
+GAME_MESSAGE = "𝚂𝙾𝚄𝚁𝙲𝙴 𝙲𝚁 𝙽𝙾𝚄𝚁\n\n★¦ مرحبا بك عزيزي:\n★¦في قسم العاب سورس نور الحاكم\n\nᯓ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙲𝚁 𝙽𝙾𝚄𝚁 "
 GAME_BUTTONS = [
     [ 
         InlineKeyboardButton ('الالعــاب-3D', callback_data= '𝙲𝚁 𝙽𝙾𝚄𝚁1'),
