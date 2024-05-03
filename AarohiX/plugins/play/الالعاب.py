@@ -8,13 +8,13 @@ from AarohiX import app
 import re
 import sys
 
-GAME_MESSAGE = "𝗦𝗼𝘂𝗿𝗰𝗲 𝗧𝗲𝘁𝗼\n\n★¦ مرحبا بك عزيزي:\n★¦في قسم العاب سورس تيتو\n\nᯓ 𝗦𝗼𝘂𝗿𝗰𝗲 𝗧𝗲𝘁𝗼 𓃠"
+GAME_MESSAGE = "𝗦𝗼𝘂𝗿𝗰𝗲 𝗧𝗲𝘁𝗼\n\n★¦ مرحبا بك عزيزي:\n★¦في قسم العاب سورس نور الحاكم\n\nᯓ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙲𝚁 𝙽𝙾𝚄𝚁 "
 GAME_BUTTONS = [
     [ 
-        InlineKeyboardButton ('الالعــاب-3D', callback_data= 'GAME1'),
-        InlineKeyboardButton ('الالعــاب', callback_data= 'GAME2'),
+        InlineKeyboardButton ('الالعــاب-3D', callback_data= '𝙲𝚁 𝙽𝙾𝚄𝚁1'),
+        InlineKeyboardButton ('الالعــاب', callback_data= '𝙲𝚁 𝙽𝙾𝚄𝚁'),
         ],[
-        InlineKeyboardButton ('𝗦𝗼𝘂𝗿𝗰𝗲 𝗧𝗲𝘁𝗼 𓃠', url =f"https://t.me/WX_PM")              
+        InlineKeyboardButton ('𝚂𝙾𝚄𝚁𝙲𝙴 𝙲𝚁 𝙽𝙾𝚄𝚁', url =f"https://t.me/vzo_a")              
                  ],[
                 InlineKeyboardButton(
                         "◁", callback_data="close"),
