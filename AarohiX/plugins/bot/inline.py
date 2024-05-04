@@ -16,7 +16,7 @@ async def inline_query_handler(client, query):
     answers = []
     if text.strip() == "":
         try:
-            await client.answer_inline_query(query.id, results=answer, cache_time=10)
+            await client.answer_inlne_query(query.id, results=answer, cache_time=10)
         except:
             return
     else:
