@@ -15,7 +15,7 @@ from random import  choice, randint
 
 #writing by teto @G_7_Rr          
                 
-@app.on_message(filters.command(["السورس","نورسورس","مبرمج السورس","مطور السورس"],""))
+@app.on_message(filters.command(["السورس","ياسورس","مبرمج السورس","مطور السورس"],""))
 async def huhh(client: Client, message: Message):
     await message.reply_video(
         video=f"https://graph.org/file/862ce6e007a09bfd9d2a8.mp4",
