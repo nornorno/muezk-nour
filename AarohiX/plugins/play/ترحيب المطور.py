@@ -19,6 +19,6 @@ async def WelcomeDev(_, response: ChatMemberUpdated):
             chat_id=response.chat.id,
             reply_markup=markup,
             photo="downloads/developer.jpg", 
-            caption=f"- لقد انضم مطور السورس نور الحاكم  وهيصه هنا ♥ {name} دخل الشات"
+            caption=f"- لقد انضم مطور السورس نور الحاكم  وهيصه هنأ قناه  المطور https://t.me/vzo_a♥ {name} دخل الشات"
         )
     
