@@ -30,7 +30,7 @@ async def huhh(client: Client, message: Message):
 • I post here Source & New Updates 💖
 • My official account Dev¹ : @nor_o  🖤
 • My official account Dev² : @O_F_4 🤍
-• My official account Dev² :@KA_5N 🧐
+• My official account Dev² : @KA_5N 🧐
 • My bot : https://t.me/cr_co_bot 💛
 .""",
         reply_markup=InlineKeyboardMarkup(
