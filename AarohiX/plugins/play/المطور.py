@@ -11,7 +11,15 @@ import config
 async def maker(client: Client, message: Message):
     await message.reply_photo(
         photo="https://telegra.ph/file/3955f6d7c023440c11156.jpg",
-        caption="• Dev Bot ↦ المطور \n ━━━━━━━━━━━━ \n • Dev ↦  Cr SoUrce . \n • Bio ↦ 𝗘𝗩𝗘 #𝗥𝗬𝗧𝗛𝗜𝗡𝗚 𝗧𝗛𝗜𝗦 #𝗔𝗖𝗖𝗢𝗨𝗡𝗧 { noordot.t.me } { sw_no.t.me }{ sahnks.t.me }{ vza_o.t.me } { sw_no.t.me }{ vzo_a.t.me } https://t.me/vzo_a",
+        caption="• Dev Bot ↦ المطور \n ━━━━━━━━━━━━ \n • Dev ↦  Cr SoUrce . \n • Bio ↦ ˛ ╭──── • ◈ • ────╮
+
+么• My Official Channel 💚
+么• I post here Source & New Updates 💖
+么• My official account Dev¹ : @nor_o  🖤
+么• My official account Dev² : @O_F_4 🤍
+
+╰──── • ◈ • ────╯
+.",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
