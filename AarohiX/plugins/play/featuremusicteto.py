@@ -24,7 +24,7 @@ from pyrogram import filters, Client
 & filters.group
  )
 async def mmmezat(client, message):
-        await message.reply_text(f"""**⦿ نور الحاكم قايمه مميزات سورس  :\n
+        await message.reply_text(f"""**⦿   قايمه مميزات سورس  :\n
 ╮⦿  المطور
 │᚜⦿ سؤال
 │᚜⦿ مين في الكول 
@@ -59,12 +59,12 @@ async def mmmezat(client, message):
 │᚜⦿ هيدرات
 │᚜⦿ اذكار 
 ╯⦿  بث مباشر للقنوات 
-[𝗦𝗼𝘂𝗿𝗰𝗲 𝗖𝗥](https://t.me/vzo_a) """,
+[𝗦𝗼𝘂𝗿𝗰𝗲](https://t.me/xx6uxx) """,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "𝙲𝚁 𝙽𝙾𝚄𝚁", url=f"https://t.me/j_d_z"),                        
+                        "αℓτυяĸy", url=f"https://t.me/X_II_H"),                        
                  ],[
                 InlineKeyboardButton(
                         "close", callback_data="close"),
