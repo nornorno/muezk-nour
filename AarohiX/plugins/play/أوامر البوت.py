@@ -20,7 +20,7 @@ from pyrogram import filters, Client
 
 
 @app.on_message(
-    filters.command(["الاوامر""مميزات"], "")
+    filters.command(["الاوامر" "مميزات"], "")
 & filters.group
  )
 async def mmmezat(client, message):
