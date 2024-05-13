@@ -11,7 +11,7 @@ import config
 async def maker(client: Client, message: Message):
     await message.reply_photo(
         photo="https://te.legra.ph/file/77bd924e46880da2b8d38.jpg",
-        caption="• Dev Bot ↦ المطور السورس زيكا و اسلام \n ━━━━━━━━━━━━ \n • Dev ↦  Cr SoUrce . \n • Bio ↦صلي علي سيدنا محمد عليه الصلاه والسلام 💕",
+        caption="• Dev Bot ↦ مطور السورس زيكا و اسلام \n ━━━━━━━━━━━━ \n • Dev ↦ αℓτυяĸy: @X_II_H Cr SoUrce . \n • Bio ↦صلي علي سيدنا محمد عليه الصلاه والسلام 💕",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
