@@ -20,7 +20,7 @@ from pyrogram import filters, Client
 
 
 @app.on_message(
-    filters.command(["الاوامر"], "")
+    filters.command(["الاوامر""مميزات"], "")
 & filters.group
  )
 async def mmmezat(client, message):
@@ -64,12 +64,12 @@ async def mmmezat(client, message):
 │᚜⦿ هيدرات
 │᚜⦿ اذكار 
 ╯⦿  بث مباشر للقنوات 
-[التحديثات](https://t.me/vzo_a) """,
+[التحديثات](https://t.me/xx6uxx) """,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "الـسورس", url=f"https://t.me/vzo_a"),                        
+                        "الـسورس", url=f"https://t.me/xx6uxx"),                        
                  ],[
                 InlineKeyboardButton(
                         "close", callback_data="close"),
