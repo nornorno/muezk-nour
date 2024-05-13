@@ -32,7 +32,7 @@ async def strcall(client, message):
 
         # إضافة زر شفاف في الأسفل
         inline_keyboard = InlineKeyboardMarkup([
-            [InlineKeyboardButton(" αℓτυяĸy ", url=f" https://t.me/xx6uxx "
+            [InlineKeyboardButton("ᴍᴜꜱɪᴄ ᴜᴘᴅᴀᴛᴇᴅ", url=f"https://t.me/xx6uxx"
         ])      
 
         await message.reply(f"{text}", reply_markup=inline_keyboard)
