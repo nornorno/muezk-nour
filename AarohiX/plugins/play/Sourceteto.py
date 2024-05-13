@@ -25,6 +25,7 @@ async def huhh(client: Client, message: Message):
 么 [αℓτυяĸy](https://t.me/X_II_H)
 ╰──── • ◈ • ────╯
 ⍟ 𝚃𝙷𝙴 𝙱𝙴𝚂𝚃 𝚂𝙾𝚄𝚁𝙲𝙴 𝙾𝙽 𝚃𝙴𝙻𝙴𝙶𝚁𝙰𝙼 
+    سـورس مـيوزك زيـكا التـركـي 
 • My Official Channel 💚
 • I post here Source & New Updates
 • My official account Dev¹ : @X_II_H 
@@ -36,10 +37,10 @@ async def huhh(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "𝙲𝚁 𝙽𝙾𝚄𝚁", url=f"https://t.me/X_II_H"), 
+                        "αℓτυяĸy", url=f"https://t.me/X_II_H"), 
                  ],[
                    InlineKeyboardButton(
-                        "𝚂𝙾𝚄𝚁𝙲𝙴 𝙲𝚁 𝙽𝙾𝚄𝚁", url=f"https://t.me/xx6uxx"),
+                        "𝚂𝙾𝚄𝚁𝙲𝙴:αℓτυяĸy", url=f"https://t.me/xx6uxx"),
                 ],
 
             ]
