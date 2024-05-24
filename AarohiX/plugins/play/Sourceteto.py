@@ -25,8 +25,8 @@ async def huhh(client: Client, message: Message):
 么 [𝚂𝙾𝚄𝚁𝙲𝙴:Dev²:](https://t.me/N_7_K)
 么 [𝚂𝙾𝚄𝚁𝙲𝙴:Dev³:](https://t.me/KeRo_7x)
 么 [𝚂𝙾𝚄𝚁𝙲𝙴:Dev⁴:](https://t.me/A_c_o_i)
-么 [Support channel](https://t.me/vzo_a)
-么 [Support group](https://t.me/cr_nox)
+么 [𝚂𝚞𝚙𝚙𝚘𝚛𝚝 𝚌𝚑𝚊𝚗𝚗𝚎¹](https://t.me/vzo_a)
+么 [Support group²](https://t.me/cr_nox)
 ▰▰▰▰▰▰▰▰▰▰▰▰▰
 ❅─────✧❅✦❅✧─────❅
 ⍟ 𝚃𝙷𝙴 𝙱𝙴𝚂𝚃 𝚂𝙾𝚄𝚁𝙲𝙴 𝙾𝙽 𝚃𝙴𝙻𝙴𝙶𝚁𝙰𝙼
@@ -35,13 +35,14 @@ async def huhh(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "αℓτυяĸy", url=f"https://t.me/nor_o"), 
+                        "مطور السورس", url=f"https://t.me/nor_o"), 
                  ],[
                    InlineKeyboardButton(
                         "𝚂𝙾𝚄𝚁𝙲𝙴:αℓτυяĸy", url=f"https://t.me/vzo_a"),
                 ],
 
-            ]
+                  InlineKeyboardButton(
+                        "مطور السورس", url=f"https://t.me/nor_o"),
 
         ),
 
