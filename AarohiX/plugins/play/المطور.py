@@ -6,22 +6,22 @@ import config
 
 
 @app.on_message(
-    command(["مطور", "مبرمج السورس", "زيكا"])
+    command(["مطور", "مبرمج السورس", "نور"])
 )
 async def maker(client: Client, message: Message):
     await message.reply_photo(
-        photo="https://te.legra.ph/file/77bd924e46880da2b8d38.jpg",
-        caption="• Dev Bot ↦ αℓτυяĸy \n ━━━━━━━━━━━━ \n • Dev ↦ Cr SoUrce: αℓτυяĸy . \n • Bio ↦- 𓏺 Whoever humbles #himself to god will be #exalted 𓏺",
+        photo="https://te.legra.ph/file/7994175c9bbea45fc7377.jpg",
+        caption="• Dev Bot ↦ ميوزك العالم \n ━━━━━━━━━━━━ \n • Dev ↦ Cr SoUrce:nour . \n • Bio ↦- 𓏺 Whoever humbles #himself to god will be #exalted 𓏺",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "αℓτυяĸy", url=f"https://t.me/X_II_H"
+                        "مطورالسورس", url=f"https://t.me/nor_o"
                     ),
                 ],
                 [
                     InlineKeyboardButton(
-                        "Updates", url=f"https://t.me/xx6uxx"
+                        "Updates", url=f"https://t.me/vzo_a"
                     ),
                 ],
             ]
