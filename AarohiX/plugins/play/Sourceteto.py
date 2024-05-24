@@ -35,10 +35,10 @@ async def huhh(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "Support group", url=f"https://t.me/cr_nox"), 
+                        "AhMeed Teto 🖤", url=f"https://t.me/WZAERE"), 
                  ],[
                    InlineKeyboardButton(
-                        "CH SOURCE", url=f"https://t.me/vzo_a"),
+                        "CH SOURCE", url=f"https://t.me/WX_PM"),
                 ],
 
             ]
