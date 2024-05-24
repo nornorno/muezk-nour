@@ -31,16 +31,18 @@ async def huhh(client: Client, message: Message):
 ❅─────✧❅✦❅✧─────❅
 ⍟ 𝚃𝙷𝙴 𝙱𝙴𝚂𝚃 𝚂𝙾𝚄𝚁𝙲𝙴 𝙾𝙽 𝚃𝙴𝙻𝙴𝙶𝚁𝙰𝙼
 .""",
-        reply_markup=InlineKeyboardMarkup(
+                reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "مطور السورس", url=f"https://t.me/nor_o"), 
+                        "AhMeed Teto 🖤", url=f"https://t.me/WZAERE"), 
                  ],[
                    InlineKeyboardButton(
-                        "𝚂𝙾𝚄𝚁𝙲𝙴:αℓτυяĸy", url=f"https://t.me/vzo_a"),
+                        "CH SOURCE", url=f"https://t.me/WX_PM"),
                 ],
-                  
+
+            ]
+
         ),
 
     )
