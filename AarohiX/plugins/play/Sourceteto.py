@@ -19,28 +19,26 @@ from random import  choice, randint
 async def huhh(client: Client, message: Message):
     await message.reply_video(
         video=f"https://graph.org/file/862ce6e007a09bfd9d2a8.mp4",
-        caption=f"""˛ ╭──── • ◈ • ────╮
-么 [𝚂𝙾𝚄𝚁𝙲𝙴:αℓτυяĸy](https://t.me/xx6uxx)
-么 [𝚂𝙾𝚄𝚁𝙲𝙴:αℓτυяĸy](https://t.me/XIXXIXl1l)
-么 [αℓτυяĸy](https://t.me/X_II_H)
-╰──── • ◈ • ────╯
-⍟ 𝚃𝙷𝙴 𝙱𝙴𝚂𝚃 𝚂𝙾𝚄𝚁𝙲𝙴 𝙾𝙽 𝚃𝙴𝙻𝙴𝙶𝚁𝙰𝙼 
-    سـورس مـيوزك زيـكا التـركـي 
-• My Official Channel 💚
-• I post here Source & New Updates
-• My official account Dev¹ : @X_II_H 
-• My official account Dev² : @XxXxXl1l
-• My official account Dev² : @U_II_H
-• My bot : https://t.me/x_ZlKA_x_bot
+        caption=f"""˛ ❅─────✧❅✦❅✧─────❅
+▰▰▰▰▰▰▰▰▰▰▰▰▰
+么 [𝚂𝙾𝚄𝚁𝙲𝙴:Dev¹:](https://t.me/nor_o)
+么 [𝚂𝙾𝚄𝚁𝙲𝙴:Dev²:](https://t.me/N_7_K)
+么 [𝚂𝙾𝚄𝚁𝙲𝙴:Dev³:](https://t.me/KeRo_7x)
+么 [𝚂𝙾𝚄𝚁𝙲𝙴:Dev⁴:](https://t.me/A_c_o_i)
+么 [Support channel](https://t.me/vzo_a)
+么 [Support group](https://t.me/cr_nox)
+▰▰▰▰▰▰▰▰▰▰▰▰▰
+❅─────✧❅✦❅✧─────❅
+⍟ 𝚃𝙷𝙴 𝙱𝙴𝚂𝚃 𝚂𝙾𝚄𝚁𝙲𝙴 𝙾𝙽 𝚃𝙴𝙻𝙴𝙶𝚁𝙰𝙼
 .""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "αℓτυяĸy", url=f"https://t.me/X_II_H"), 
+                        "αℓτυяĸy", url=f"https://t.me/nor_o"), 
                  ],[
                    InlineKeyboardButton(
-                        "𝚂𝙾𝚄𝚁𝙲𝙴:αℓτυяĸy", url=f"https://t.me/xx6uxx"),
+                        "𝚂𝙾𝚄𝚁𝙲𝙴:αℓτυяĸy", url=f"https://t.me/vzo_a"),
                 ],
 
             ]
