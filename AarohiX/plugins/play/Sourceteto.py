@@ -18,13 +18,11 @@ from random import  choice, randint
 @app.on_message(filters.command(["السورس","ياسورس","مبرمج السورس","مطور السورس"],""))
 async def huhh(client: Client, message: Message):
     await message.reply_video(
-        video=f"https://graph.org/file/862ce6e007a09bfd9d2a8.mp4",
+        video=f"https://telegra.ph/file/06ea0dffac061d340b30a.mp4",
         caption=f"""˛ ❅─────✧❅✦❅✧─────❅
 ▰▰▰▰▰▰▰▰▰▰▰▰▰
 么 [𝚂𝙾𝚄𝚁𝙲𝙴:Dev¹:𝚗𝚘𝚞𝚛](https://t.me/nor_o)
 么 [𝚂𝙾𝚄𝚁𝙲𝙴:Dev²:𝚊𝚑𝚖𝚎𝚍](https://t.me/N_7_K)
-么 [𝚂𝙾𝚄𝚁𝙲𝙴:Dev³:𝚔𝚎𝚛𝚘](https://t.me/KeRo_7x)
-么 [𝚂𝙾𝚄𝚁𝙲𝙴:Dev⁴:𝚊𝚋𝚍𝚘](https://t.me/A_c_o_i)
 么 [𝚂𝚞𝚙𝚙𝚘𝚛𝚝 𝚌𝚑𝚊𝚗𝚗𝚎¹](https://t.me/vzo_a)
 么 [Support group²](https://t.me/cr_nox)
 ▰▰▰▰▰▰▰▰▰▰▰▰▰
@@ -34,10 +32,10 @@ async def huhh(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "Support group", url=f"https://t.me/cr_nox"), 
+                        "❅✧جـروب الدعـم✧❅", url=f"https://t.me/cr_nox"), 
                  ],[
                    InlineKeyboardButton(
-                        "CH SOURCE", url=f"https://t.me/vzo_a"),
+                        "❅✧قــناه الـسورس❅✧", url=f"https://t.me/vzo_a"),
                 ],
 
             ]
