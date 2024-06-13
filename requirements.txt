@@ -9,6 +9,7 @@ Faker
 ffmpeg-python
 gitpython
 git+https://github.com/AsmSafone/SafoneAPI
+git+https://github.com/yt-dlp/yt-dlp.git
 gtts
 gpytranslate
 hachoir
@@ -37,7 +38,7 @@ spotipy
 telegraph
 tgcrypto
 unidecode
-yt-dlp==2023.12.30
+yt-dlp==2024.05.27
 youtube-search
 youtube-search-python
 wget
