@@ -9,14 +9,14 @@ import config
     command(["مطور", "مبرمج السورس", "نور"])
 )
 async def maker(client: Client, message: Message):
-    await message.reply_photo(
-        photo="https://te.legra.ph/file/7994175c9bbea45fc7377.jpg",
-        caption="• Dev Bot ↦ ميوزك العالم \n ━━━━━━━━━━━━ \n • Dev ↦ Cr SoUrce:nour . \n • Bio ↦- 𓏺 Whoever humbles #himself to god will be #exalted 𓏺",
+    await message.reply_video(
+        video="https://telegra.ph/file/06ea0dffac061d340b30a.mp4",
+        caption="• 𝐃𝐞𝐯 𝐁𝐨𝐭: ↦ مــيوزك العـالم \n ━━━━━━━━━━━━ \n • 𝐃𝐞𝐯: ↦ Cr SoUrce:nour . \n • 𝐁𝐢𝐨 ↦- 𓏺 Whoever humbles #himself to god will be #exalted 𓏺",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "مطورالسورس", url=f"https://t.me/nor_o"
+                        "✧❅مطـورالسـورس✧❅", url=f"https://t.me/nor_o"
                     ),
                 ],
                 [
